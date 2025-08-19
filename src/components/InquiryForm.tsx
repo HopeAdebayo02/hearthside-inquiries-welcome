@@ -1,0 +1,211 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+import { Phone, Mail, Calendar, Heart } from "lucide-react";
+
+const InquiryForm = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    relationship: "",
+    urgency: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Here you would typically send the data to your backend
+    console.log("Form submitted:", formData);
+    
+    toast({
+      title: "Thank you for your inquiry!",
+      description: "We'll contact you within 24 hours to discuss your needs.",
+    });
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      relationship: "",
+      urgency: "",
+      message: ""
+    });
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-gradient-to-br from-comfort-blue to-family-orange">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex justify-center mb-4">
+              <Heart className="w-12 h-12 text-warm-primary" />
+            </div>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Start Your Journey With Us</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Every family's story is unique. Tell us about your loved one, and we'll help you 
+              find the perfect care solution together.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Contact Information */}
+            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-[var(--shadow-warm)]">
+              <CardHeader>
+                <CardTitle className="text-2xl text-foreground flex items-center gap-2">
+                  <Phone className="w-6 h-6 text-warm-primary" />
+                  Get in Touch
+                </CardTitle>
+                <CardDescription className="text-lg">
+                  We're here to answer all your questions and guide you through the process.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
+                    <Phone className="w-6 h-6 text-warm-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">(555) 123-4567</p>
+                    <p className="text-muted-foreground">Available 24/7</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
+                    <Mail className="w-6 h-6 text-warm-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">info@hearthsidemanor.com</p>
+                    <p className="text-muted-foreground">We respond within 2 hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
+                    <Calendar className="w-6 h-6 text-warm-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Schedule a Visit</p>
+                    <p className="text-muted-foreground">Tours available daily</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Inquiry Form */}
+            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-[var(--shadow-warm)]">
+              <CardHeader>
+                <CardTitle className="text-2xl text-foreground">Send Us Your Inquiry</CardTitle>
+                <CardDescription className="text-lg">
+                  Tell us about your loved one's needs and we'll create a personalized care plan.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Your Name *</Label>
+                      <Input
+                        id="name"
+                        value={formData.name}
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        required
+                        className="border-warm-secondary/30 focus:border-warm-primary"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email Address *</Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        required
+                        className="border-warm-secondary/30 focus:border-warm-primary"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Input
+                        id="phone"
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        required
+                        className="border-warm-secondary/30 focus:border-warm-primary"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="relationship">Your Relationship</Label>
+                      <Select onValueChange={(value) => handleInputChange("relationship", value)}>
+                        <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                          <SelectValue placeholder="Select relationship" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="child">Adult Child</SelectItem>
+                          <SelectItem value="spouse">Spouse</SelectItem>
+                          <SelectItem value="sibling">Sibling</SelectItem>
+                          <SelectItem value="relative">Other Relative</SelectItem>
+                          <SelectItem value="friend">Family Friend</SelectItem>
+                          <SelectItem value="self">Myself</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="urgency">How soon are you looking for care?</Label>
+                    <Select onValueChange={(value) => handleInputChange("urgency", value)}>
+                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                        <SelectValue placeholder="Select timeframe" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="immediate">Immediately (within 1 week)</SelectItem>
+                        <SelectItem value="soon">Soon (within 1 month)</SelectItem>
+                        <SelectItem value="planning">Planning ahead (2-6 months)</SelectItem>
+                        <SelectItem value="future">Future planning (6+ months)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Tell us about your loved one's needs</Label>
+                    <Textarea
+                      id="message"
+                      value={formData.message}
+                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      rows={4}
+                      placeholder="Please share any specific care needs, medical conditions, or questions you have..."
+                      className="border-warm-secondary/30 focus:border-warm-primary"
+                    />
+                  </div>
+                  
+                  <Button type="submit" variant="hero" size="lg" className="w-full">
+                    Send My Inquiry
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default InquiryForm;
