@@ -14,7 +14,12 @@ const Header = () => {
           <a href="#about" className="text-foreground hover:text-warm-primary transition-colors">About</a>
           <a href="#services" className="text-foreground hover:text-warm-primary transition-colors">Services</a>
           <a href="#contact" className="text-foreground hover:text-warm-primary transition-colors">Contact</a>
-          <Button variant="hero" size="sm" className="flex items-center gap-2">
+          <Button 
+            variant="hero" 
+            size="sm" 
+            className="flex items-center gap-2"
+            onClick={() => window.open('tel:651-500-0971')}
+          >
             <Phone className="w-4 h-4" />
             651-500-0971
           </Button>
