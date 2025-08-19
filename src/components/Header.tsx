@@ -19,7 +19,7 @@ const Header = () => {
           <a href="#contact" className="text-foreground hover:text-warm-primary transition-colors">Contact</a>
           <Button variant="hero" size="sm" className="flex items-center gap-2">
             <Phone className="w-4 h-4" />
-            Call Today
+            651-500-0971
           </Button>
         </nav>
       </div>

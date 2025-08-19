@@ -100,28 +100,6 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Testimonials */}
-        <div>
-          <h3 className="text-3xl font-bold text-center text-foreground mb-12">
-            What Families Are Saying
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => <Card key={index} className="border-warm-secondary/30 bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="text-center mb-4">
-                    <div className="text-4xl mb-2">{testimonial.image}</div>
-                  </div>
-                  <blockquote className="text-muted-foreground text-center italic mb-4 leading-relaxed">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="text-center">
-                    <p className="font-semibold text-foreground">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.relationship}</p>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
 
         {/* Call to Action */}
         <div className="text-center mt-16">

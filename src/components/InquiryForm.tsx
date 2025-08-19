@@ -19,26 +19,45 @@ const InquiryForm = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Thank you for your inquiry!",
-      description: "We'll contact you within 24 hours to discuss your needs.",
-    });
+    try {
+      // Create mailto link with form data
+      const subject = `New Inquiry from ${formData.name}`;
+      const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Relationship: ${formData.relationship}
+Urgency: ${formData.urgency}
+Message: ${formData.message}
+      `;
+      
+      const mailtoLink = `mailto:Hope.adebayo02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoLink);
+      
+      toast({
+        title: "Thank you for your inquiry!",
+        description: "We'll contact you within 24 hours to discuss your needs.",
+      });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      relationship: "",
-      urgency: "",
-      message: ""
-    });
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        relationship: "",
+        urgency: "",
+        message: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error sending inquiry",
+        description: "Please try again or call us directly.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -78,7 +97,7 @@ const InquiryForm = () => {
                     <Phone className="w-6 h-6 text-warm-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">(555) 123-4567</p>
+                    <p className="font-semibold text-foreground">651-500-0971</p>
                     <p className="text-muted-foreground">Available 24/7</p>
                   </div>
                 </div>
@@ -88,7 +107,7 @@ const InquiryForm = () => {
                     <Mail className="w-6 h-6 text-warm-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">info@hearthsidemanor.com</p>
+                    <p className="font-semibold text-foreground">emantop@yahoo.com</p>
                     <p className="text-muted-foreground">We respond within 2 hours</p>
                   </div>
                 </div>

@@ -7,7 +7,6 @@ import {
   ShieldCheck, 
   Home,
   Stethoscope,
-  Music,
   Car
 } from "lucide-react";
 
@@ -53,12 +52,6 @@ const services = [
     title: "Healthcare Coordination",
     description: "On-site medical services and coordination with family physicians and specialists.",
     color: "text-warm-primary"
-  },
-  {
-    icon: Music,
-    title: "Memory Care",
-    description: "Specialized programs for residents with dementia and Alzheimer's in a secure environment.",
-    color: "text-trust-green"
   },
   {
     icon: Car,
