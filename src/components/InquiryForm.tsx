@@ -112,7 +112,10 @@ Message: ${formData.message}
                   </div>
                 </div>
                 
-                <div className="flex items-center space-x-4">
+                <button 
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="flex items-center space-x-4 w-full text-left hover:bg-warm-primary/5 rounded-lg p-2 transition-colors"
+                >
                   <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
                     <Calendar className="w-6 h-6 text-warm-primary" />
                   </div>
@@ -120,7 +123,7 @@ Message: ${formData.message}
                     <p className="font-semibold text-foreground">Schedule a Visit</p>
                     <p className="text-muted-foreground">Tours available daily</p>
                   </div>
-                </div>
+                </button>
               </CardContent>
             </Card>
 

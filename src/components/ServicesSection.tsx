@@ -12,42 +12,6 @@ import {
 
 const services = [
   {
-    icon: Heart,
-    title: "Personal Care",
-    description: "Compassionate assistance with daily activities including bathing, dressing, and medication management.",
-    color: "text-warm-primary"
-  },
-  {
-    icon: Utensils,
-    title: "Nutritious Dining",
-    description: "Chef-prepared meals accommodating dietary restrictions and family recipe preferences.",
-    color: "text-trust-green"
-  },
-  {
-    icon: Activity,
-    title: "Wellness Programs",
-    description: "Physical therapy, exercise classes, and health monitoring tailored to individual needs.",
-    color: "text-warm-primary"
-  },
-  {
-    icon: Users,
-    title: "Social Activities",
-    description: "Family gatherings, community events, and social programs that keep residents connected.",
-    color: "text-trust-green"
-  },
-  {
-    icon: ShieldCheck,
-    title: "24/7 Security",
-    description: "Round-the-clock safety monitoring with emergency response systems and trained staff.",
-    color: "text-warm-primary"
-  },
-  {
-    icon: Home,
-    title: "Comfortable Living",
-    description: "Private and semi-private rooms designed to feel like home with personal touches welcome.",
-    color: "text-trust-green"
-  },
-  {
     icon: Stethoscope,
     title: "Healthcare Coordination",
     description: "On-site medical services and coordination with family physicians and specialists.",
@@ -75,7 +39,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index} 
