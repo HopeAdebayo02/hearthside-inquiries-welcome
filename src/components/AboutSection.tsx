@@ -103,7 +103,12 @@ const AboutSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <Button variant="hero" size="lg" className="text-lg px-8 py-3">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="text-lg px-8 py-3"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Schedule Your Personal Tour Today
           </Button>
           <p className="text-muted-foreground mt-4">Experience the Goshen Concept Care difference in person</p>
