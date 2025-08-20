@@ -38,7 +38,7 @@ const serviceTypes = [
 const ServiceTypesSection = () => {
   const handleServiceInquiry = (serviceCode: string, serviceTitle: string) => {
     // Scroll to inquiry form and potentially pre-fill service type
-    const inquiryForm = document.getElementById('inquiry');
+    const inquiryForm = document.getElementById('contact');
     if (inquiryForm) {
       inquiryForm.scrollIntoView({ behavior: 'smooth' });
       
@@ -118,7 +118,7 @@ const ServiceTypesSection = () => {
           <Button 
             variant="outline" 
             onClick={() => {
-              const inquiryForm = document.getElementById('inquiry');
+              const inquiryForm = document.getElementById('contact');
               if (inquiryForm) {
                 inquiryForm.scrollIntoView({ behavior: 'smooth' });
               }
