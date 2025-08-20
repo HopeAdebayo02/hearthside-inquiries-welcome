@@ -92,7 +92,10 @@ Message: ${formData.message}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="flex items-center space-x-4">
+                <button 
+                  onClick={() => window.open('tel:651-500-0971')}
+                  className="flex items-center space-x-4 w-full text-left hover:bg-warm-primary/5 rounded-lg p-2 transition-colors"
+                >
                   <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
                     <Phone className="w-6 h-6 text-warm-primary" />
                   </div>
@@ -100,9 +103,12 @@ Message: ${formData.message}
                     <p className="font-semibold text-foreground">651-500-0971</p>
                     <p className="text-muted-foreground">Available 24/7</p>
                   </div>
-                </div>
+                </button>
                 
-                <div className="flex items-center space-x-4">
+                <button 
+                  onClick={() => window.open('mailto:emantop@yahoo.com')}
+                  className="flex items-center space-x-4 w-full text-left hover:bg-warm-primary/5 rounded-lg p-2 transition-colors"
+                >
                   <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
                     <Mail className="w-6 h-6 text-warm-primary" />
                   </div>
@@ -110,7 +116,7 @@ Message: ${formData.message}
                     <p className="font-semibold text-foreground">emantop@yahoo.com</p>
                     <p className="text-muted-foreground">We respond within 2 hours</p>
                   </div>
-                </div>
+                </button>
                 
                 <button 
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Shield, Users } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/hero-image-warm.jpg";
 
 const HeroSection = () => {
   return (
@@ -10,7 +10,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-comfort-blue/90 to-family-orange/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-comfort-blue/80 to-warm-primary/70"></div>
       </div>
       
       {/* Content */}
