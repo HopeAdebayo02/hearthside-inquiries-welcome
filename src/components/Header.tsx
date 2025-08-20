@@ -5,8 +5,8 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <div>
-            <h1 className="text-xl font-bold text-foreground">GOSHEN CONCEPT CARE LLC</h1>
-            <p className="text-sm text-muted-foreground">Assisted Living Facility</p>
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground tracking-wide">GOSHEN CONCEPT CARE LLC</h1>
+            <p className="text-base md:text-lg text-warm-primary font-semibold">Assisted Living Facility</p>
           </div>
         </div>
         
