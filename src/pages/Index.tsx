@@ -12,10 +12,10 @@ const Index = () => {
       <Header />
       <HeroSection />
       <AboutSection />
+      <StaffSection />
       <ServiceTypesSection />
       <ServicesSection />
       <InquiryForm />
-      <StaffSection />
     </div>
   );
 };
