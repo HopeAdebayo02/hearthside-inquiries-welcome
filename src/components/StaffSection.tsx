@@ -27,21 +27,22 @@ const staffMembers = [
     specialties: ["Administration", "Regulatory Compliance", "Facility Management"]
   },
   {
-    name: "Faith Adebayo",
-    title: "Registered Nurse",
-    credentials: "RN, 1 Year Experience",
-    bio: "Faith brings dedication and fresh perspective to our nursing team, ensuring our residents receive compassionate and professional medical care.",
-    icon: Stethoscope,
-    specialties: ["Patient Care", "Medication Management", "Health Monitoring"]
-  },
-  {
-    name: "Hope Adebayo",
-    title: "Resident Services Coordinator",
-    credentials: "University of St. Thomas Graduate",
-    bio: "Hope graduated from University of St. Thomas and enjoys coordinating services that enhance the daily lives and experiences of our residents.",
-    icon: GraduationCap,
-    specialties: ["Resident Services", "Activity Coordination", "Family Communication"]
-  }
+  name: "Faith Adebayo",
+  title: "Registered Nurse",
+  credentials: "RN, Skilled in Patient Care & Clinical Support",
+  bio: "Faith is a committed nursing professional who brings strong clinical knowledge and a compassionate approach to resident care. She is experienced in patient support, medication management, and fostering a safe, supportive environment for residents.",
+  icon: Stethoscope,
+  specialties: ["Patient Care", "Medication Management", "Health Monitoring"]
+},
+{
+  name: "Hope Adebayo",
+  title: "Resident Services Coordinator",
+  credentials: "BBA, University of St. Thomas",
+  bio: "Hope leverages a background in business and healthcare operations to coordinate resident services with excellence. He is passionate about creating meaningful daily experiences, enhancing quality of life, and maintaining open, supportive communication with families.",
+  icon: GraduationCap,
+  specialties: ["Resident Services", "Activity Coordination", "Family Communication"]
+}
+
 ];
 
 const StaffSection = () => {
