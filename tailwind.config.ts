@@ -52,11 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'warm-primary': 'hsl(var(--warm-primary))',
-				'warm-secondary': 'hsl(var(--warm-secondary))',
-				'comfort-blue': 'hsl(var(--comfort-blue))',
-				'family-orange': 'hsl(var(--family-orange))',
-				'trust-green': 'hsl(var(--trust-green))',
+				'care-primary': 'hsl(var(--care-primary))',
+				'care-secondary': 'hsl(var(--care-secondary))',
+				'care-accent': 'hsl(var(--care-accent))',
+				'trust-blue': 'hsl(var(--trust-blue))',
+				'comfort-gray': 'hsl(var(--comfort-gray))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

@@ -10,7 +10,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-comfort-blue/80 to-warm-primary/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/85 to-primary/75"></div>
       </div>
       
       {/* Content */}
@@ -22,12 +22,12 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Where Family 
-            <span className="block text-family-orange">Comes First</span>
+            <span className="block text-white/90">Comes First</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
             Experience compassionate, family-centered assisted living in a warm, 
             welcoming community designed to feel like home.
           </p>
@@ -36,16 +36,18 @@ const HeroSection = () => {
             <Button 
               variant="hero" 
               size="lg" 
-              className="text-lg px-8 py-3"
+              className="w-full sm:w-auto text-lg px-8 py-4 font-semibold min-h-[52px]"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              aria-label="Schedule a visit to our facility"
             >
               Schedule a Visit
             </Button>
             <Button 
-              variant="warm" 
+              variant="outline" 
               size="lg" 
-              className="text-lg px-8 py-3"
+              className="w-full sm:w-auto text-lg px-8 py-4 font-semibold border-white text-white hover:bg-white hover:text-primary min-h-[52px]"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              aria-label="Learn more about our services"
             >
               Learn More
             </Button>

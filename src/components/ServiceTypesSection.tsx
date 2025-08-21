@@ -16,7 +16,7 @@ const serviceTypes = [
       "Companionship",
       "Transportation assistance"
     ],
-    color: "text-trust-green"
+    color: "text-primary"
   },
   {
     code: "144G", 
@@ -31,7 +31,7 @@ const serviceTypes = [
       "Social activities & programs",
       "Emergency response system"
     ],
-    color: "text-warm-primary"
+    color: "text-primary"
   }
 ];
 
@@ -53,47 +53,49 @@ const ServiceTypesSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-comfort-blue/30 to-family-orange/20">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-care-accent to-background">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             Choose Your Care Option
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             We offer two specialized care options to meet your unique needs. 
             Select the option that best fits your situation to learn more.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {serviceTypes.map((service, index) => (
             <Card 
               key={index}
-              className="border-warm-secondary/30 hover:shadow-[var(--shadow-warm)] transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-background to-background/50 relative overflow-hidden"
+              className="border-2 border-care-secondary hover:border-primary/30 hover:shadow-[var(--shadow-primary)] transition-all duration-300 hover:-translate-y-1 bg-background relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 bg-warm-secondary/20 text-warm-primary font-mono text-sm px-3 py-1 rounded-bl-lg">
+              <div className="absolute top-0 right-0 bg-care-accent text-primary font-mono text-sm font-semibold px-4 py-2 rounded-bl-xl border-l-2 border-b-2 border-primary/20">
                 {service.code}
               </div>
               
-              <CardHeader className="text-center pb-4">
-                <div className="flex justify-center mb-4">
-                  <div className="flex items-center justify-center w-20 h-20 bg-warm-secondary/30 rounded-full">
-                    <service.icon className={`w-10 h-10 ${service.color}`} />
+              <CardHeader className="text-center pb-6 pt-8">
+                <div className="flex justify-center mb-6">
+                  <div className="flex items-center justify-center w-20 h-20 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors">
+                    <service.icon className={`w-10 h-10 ${service.color} transition-colors`} />
                   </div>
                 </div>
-                <CardTitle className="text-2xl text-foreground">{service.title}</CardTitle>
-                <CardDescription className="text-base leading-relaxed mt-2">
+                <CardTitle className="text-2xl md:text-3xl text-foreground font-bold mb-4">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-base md:text-lg leading-relaxed text-muted-foreground">
                   {service.description}
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-6 pb-8">
                 <div>
-                  <h4 className="font-semibold text-foreground mb-3">What's Included:</h4>
-                  <ul className="space-y-2">
+                  <h4 className="font-bold text-foreground mb-4 text-lg">What's Included:</h4>
+                  <ul className="space-y-3">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-muted-foreground">
-                        <div className={`w-2 h-2 rounded-full ${service.color.replace('text-', 'bg-')} mr-3 flex-shrink-0`}></div>
+                      <li key={featureIndex} className="flex items-center text-muted-foreground text-base">
+                        <div className={`w-2 h-2 rounded-full bg-primary mr-3 flex-shrink-0`}></div>
                         {feature}
                       </li>
                     ))}
@@ -102,7 +104,10 @@ const ServiceTypesSection = () => {
 
                 <Button 
                   onClick={() => handleServiceInquiry(service.code, service.title)}
-                  className="w-full bg-warm-primary hover:bg-warm-primary/90 text-primary-foreground font-semibold py-3 text-lg transition-all duration-300 hover:shadow-[var(--shadow-soft)]"
+                  variant="hero"
+                  size="lg"
+                  className="w-full font-semibold text-lg min-h-[52px]"
+                  aria-label={`Learn more about ${service.title} (${service.code})`}
                 >
                   Learn More About {service.code}
                 </Button>
@@ -111,19 +116,21 @@ const ServiceTypesSection = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-4">
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground mb-6 text-base md:text-lg">
             Not sure which option is right for you?
           </p>
           <Button 
-            variant="outline" 
+            variant="care" 
+            size="lg"
             onClick={() => {
               const inquiryForm = document.getElementById('contact');
               if (inquiryForm) {
                 inquiryForm.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="border-warm-primary text-warm-primary hover:bg-warm-primary hover:text-primary-foreground"
+            className="font-semibold text-lg min-h-[52px]"
+            aria-label="Contact us for a consultation to determine the best care option"
           >
             Contact Us for a Consultation
           </Button>

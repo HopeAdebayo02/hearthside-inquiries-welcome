@@ -39,62 +39,91 @@ const testimonials = [{
   image: "👵"
 }];
 const AboutSection = () => {
-  return <section id="about" className="py-20 bg-muted/50">
-      <div className="container mx-auto px-4">
+  return (
+    <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-care-accent to-background">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Mission Statement */}
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             Our Family Caring for Yours
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed mb-8">At Goshen Concept Care LLC, we believe that assisted living should feel like an extension of home, not an institution. Our family-founded facility has been serving the community for over 15 years, providing compassionate care that honors the dignity and independence of every resident.</p>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
+            At Goshen Concept Care LLC, we believe that assisted living should feel like 
+            an extension of home, not an institution. Our family-founded facility has been 
+            serving the community for over 15 years, providing compassionate care that 
+            honors the dignity and independence of every resident.
+          </p>
           <div className="flex justify-center">
-            <div className="w-24 h-1 bg-gradient-to-r from-warm-primary to-trust-green rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 rounded-full"></div>
           </div>
         </div>
 
         {/* Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {stats.map((stat, index) => <Card key={index} className="text-center border-warm-secondary/30 bg-background hover:shadow-[var(--shadow-soft)] transition-all duration-300">
-              <CardHeader>
-                <div className="flex justify-center mb-2">
-                  <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-full">
-                    <stat.icon className="w-6 h-6 text-warm-primary" />
+          {stats.map((stat, index) => (
+            <Card 
+              key={index} 
+              className="text-center border-2 border-care-secondary bg-background hover:shadow-[var(--shadow-primary)] hover:border-primary/20 transition-all duration-300 p-6"
+            >
+              <CardHeader className="pb-4">
+                <div className="flex justify-center mb-4">
+                  <div className="flex items-center justify-center w-16 h-16 bg-care-accent rounded-xl border-2 border-primary/10">
+                    <stat.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                <CardTitle className="text-3xl font-bold text-warm-primary">{stat.number}</CardTitle>
-                <CardDescription className="font-semibold text-foreground text-lg">{stat.label}</CardDescription>
+                <CardTitle className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  {stat.number}
+                </CardTitle>
+                <CardDescription className="font-semibold text-foreground text-lg">
+                  {stat.label}
+                </CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{stat.description}</p>
+              <CardContent className="pt-0">
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                  {stat.description}
+                </p>
               </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
 
         {/* Our Values */}
-        <div className="bg-gradient-to-br from-comfort-blue to-family-orange rounded-2xl p-8 md:p-12 mb-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-3xl font-bold text-foreground mb-6">Our Core Values</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+        <div className="bg-gradient-to-br from-primary/5 to-care-accent rounded-2xl p-8 md:p-12 mb-20 border-2 border-primary/10 shadow-[var(--shadow-card)]">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Our Core Values</h3>
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
               <div className="text-center">
-                <div className="flex justify-center mb-4">
-                  <Heart className="w-10 h-10 text-warm-primary" />
+                <div className="flex justify-center mb-6">
+                  <div className="flex items-center justify-center w-16 h-16 bg-background rounded-xl border-2 border-primary/20 shadow-[var(--shadow-card)]">
+                    <Heart className="w-8 h-8 text-primary" />
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground mb-2">Compassion</h4>
-                <p className="text-muted-foreground">Every interaction is guided by empathy and understanding</p>
+                <h4 className="text-xl font-bold text-foreground mb-3">Compassion</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Every interaction is guided by empathy and understanding
+                </p>
               </div>
               <div className="text-center">
-                <div className="flex justify-center mb-4">
-                  <Users className="w-10 h-10 text-warm-primary" />
+                <div className="flex justify-center mb-6">
+                  <div className="flex items-center justify-center w-16 h-16 bg-background rounded-xl border-2 border-primary/20 shadow-[var(--shadow-card)]">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground mb-2">Family</h4>
-                <p className="text-muted-foreground">Creating a community where everyone belongs</p>
+                <h4 className="text-xl font-bold text-foreground mb-3">Family</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Creating a community where everyone belongs
+                </p>
               </div>
               <div className="text-center">
-                <div className="flex justify-center mb-4">
-                  <Award className="w-10 h-10 text-warm-primary" />
+                <div className="flex justify-center mb-6">
+                  <div className="flex items-center justify-center w-16 h-16 bg-background rounded-xl border-2 border-primary/20 shadow-[var(--shadow-card)]">
+                    <Award className="w-8 h-8 text-primary" />
+                  </div>
                 </div>
-                <h4 className="text-xl font-semibold text-foreground mb-2">Excellence</h4>
-                <p className="text-muted-foreground">Commitment to the highest standards of care</p>
+                <h4 className="text-xl font-bold text-foreground mb-3">Excellence</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Commitment to the highest standards of care
+                </p>
               </div>
             </div>
           </div>
@@ -106,14 +135,18 @@ const AboutSection = () => {
           <Button 
             variant="hero" 
             size="lg" 
-            className="text-lg px-8 py-3"
+            className="text-lg px-8 py-4 font-semibold min-h-[52px]"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            aria-label="Schedule your personal tour of our facility today"
           >
             Schedule Your Personal Tour Today
           </Button>
-          <p className="text-muted-foreground mt-4">Experience the Goshen Concept Care difference in person</p>
+          <p className="text-muted-foreground mt-4 text-base md:text-lg">
+            Experience the Goshen Concept Care difference in person
+          </p>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default AboutSection;

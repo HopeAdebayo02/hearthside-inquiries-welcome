@@ -65,43 +65,48 @@ Message: ${formData.message}
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-comfort-blue to-family-orange">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-care-accent">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <div className="flex justify-center mb-4">
-              <Heart className="w-12 h-12 text-warm-primary" />
+            <div className="flex justify-center mb-6">
+              <div className="flex items-center justify-center w-20 h-20 bg-background rounded-xl border-2 border-primary/20 shadow-[var(--shadow-card)]">
+                <Heart className="w-10 h-10 text-primary" />
+              </div>
             </div>
-            <h2 className="text-4xl font-bold text-foreground mb-4">Start Your Journey With Us</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Start Your Journey With Us
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Every family's story is unique. Tell us about your loved one, and we'll help you 
               find the perfect care solution together.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Information */}
-            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-[var(--shadow-warm)]">
-              <CardHeader>
-                <CardTitle className="text-2xl text-foreground flex items-center gap-2">
-                  <Phone className="w-6 h-6 text-warm-primary" />
+            <Card className="bg-background border-2 border-care-secondary shadow-[var(--shadow-primary)] hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl md:text-3xl text-foreground flex items-center gap-3 mb-2">
+                  <Phone className="w-7 h-7 text-primary" />
                   Get in Touch
                 </CardTitle>
-                <CardDescription className="text-lg">
+                <CardDescription className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   We're here to answer all your questions and guide you through the process.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <button 
                   onClick={() => window.open('tel:651-500-0971')}
-                  className="flex items-center space-x-4 w-full text-left hover:bg-warm-primary/5 rounded-lg p-2 transition-colors"
+                  className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
+                  aria-label="Call us at 651-500-0971"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
-                    <Phone className="w-6 h-6 text-warm-primary" />
+                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10">
+                    <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">651-500-0971</p>
-                    <p className="text-muted-foreground">Available 24/7</p>
+                    <p className="font-bold text-foreground text-lg">651-500-0971</p>
+                    <p className="text-muted-foreground text-sm">Available 24/7</p>
                   </div>
                 </button>
                 
@@ -134,10 +139,12 @@ Message: ${formData.message}
             </Card>
 
             {/* Inquiry Form */}
-            <Card className="bg-white/90 backdrop-blur-sm border-0 shadow-[var(--shadow-warm)]">
-              <CardHeader>
-                <CardTitle className="text-2xl text-foreground">Send Us Your Inquiry</CardTitle>
-                <CardDescription className="text-lg">
+            <Card className="bg-background border-2 border-care-secondary shadow-[var(--shadow-primary)] hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-6">
+                <CardTitle className="text-2xl md:text-3xl text-foreground mb-2">
+                  Send Us Your Inquiry
+                </CardTitle>
+                <CardDescription className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   Tell us about your loved one's needs and we'll create a personalized care plan.
                 </CardDescription>
               </CardHeader>
@@ -151,7 +158,8 @@ Message: ${formData.message}
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
                         required
-                        className="border-warm-secondary/30 focus:border-warm-primary"
+                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors text-base"
+                        aria-describedby="name-description"
                       />
                     </div>
                     <div className="space-y-2">
@@ -223,7 +231,13 @@ Message: ${formData.message}
                     />
                   </div>
                   
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
+                  <Button 
+                    type="submit" 
+                    variant="hero" 
+                    size="lg" 
+                    className="w-full min-h-[52px] text-lg font-semibold"
+                    aria-label="Submit inquiry form"
+                  >
                     Send My Inquiry
                   </Button>
                 </form>
