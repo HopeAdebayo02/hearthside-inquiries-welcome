@@ -3,36 +3,44 @@ import { Heart, GraduationCap, Award, Stethoscope } from "lucide-react";
 
 const staffMembers = [
   {
-    name: "Hope Adebayo",
-    title: "Executive Director & Founder",
-    credentials: "RN, BSN, 15+ Years Experience",
-    bio: "Hope founded Goshen Concept Care with a vision to provide family-centered assisted living that honors each resident's dignity and independence.",
+    name: "Emmanuel Adebayo",
+    title: "Co-Founder & Owner",
+    credentials: "15+ Years Experience in Assisted Living",
+    bio: "Emmanuel co-founded Goshen Concept Care with a vision to provide family-centered assisted living that honors each resident's dignity and independence.",
     icon: Heart,
-    specialties: ["Family Care", "Leadership", "Community Building"]
+    specialties: ["Leadership", "Operations Management", "Family Care"]
   },
   {
-    name: "Dr. Sarah Johnson",
-    title: "Medical Director",
-    credentials: "MD, Geriatric Medicine Specialist",
-    bio: "Dr. Johnson ensures our residents receive comprehensive medical care while maintaining their quality of life and personal autonomy.",
+    name: "Olu Adebayo",
+    title: "Co-Founder & Owner",
+    credentials: "15+ Years Experience in Assisted Living",
+    bio: "Olu co-founded Goshen Concept Care alongside Emmanuel, bringing extensive experience and a passion for quality senior care to the community.",
+    icon: Heart,
+    specialties: ["Business Development", "Community Relations", "Quality Assurance"]
+  },
+  {
+    name: "Faith Adebayo",
+    title: "Registered Nurse",
+    credentials: "RN, 1 Year Experience",
+    bio: "Faith brings dedication and fresh perspective to our nursing team, ensuring our residents receive compassionate and professional medical care.",
     icon: Stethoscope,
-    specialties: ["Geriatric Medicine", "Chronic Disease Management", "Preventive Care"]
+    specialties: ["Patient Care", "Medication Management", "Health Monitoring"]
   },
   {
-    name: "Michael Thompson",
-    title: "Director of Nursing",
-    credentials: "RN, MSN, Certified Gerontological Nurse",
-    bio: "Michael leads our nursing team with compassion and expertise, ensuring 24/7 quality care for all our residents.",
+    name: "Hope Adebayo",
+    title: "Resident Services Coordinator",
+    credentials: "University of St. Thomas Graduate",
+    bio: "Hope graduated from University of St. Thomas and enjoys coordinating services that enhance the daily lives and experiences of our residents.",
     icon: GraduationCap,
-    specialties: ["Medication Management", "Care Planning", "Staff Training"]
+    specialties: ["Resident Services", "Activity Coordination", "Family Communication"]
   },
   {
-    name: "Maria Rodriguez",
-    title: "Activities Coordinator",
-    credentials: "BS Recreation Therapy, CTRS",
-    bio: "Maria creates engaging programs that keep our residents active, social, and connected to their interests and the community.",
+    name: "Samlina Cawray",
+    title: "Administrator",
+    credentials: "Extensive Minnesota Assisted Living Experience",
+    bio: "Samlina has worked with countless assisted living facilities across Minnesota and brings amazing expertise to her administrative role at Goshen Concept Care.",
     icon: Award,
-    specialties: ["Recreation Therapy", "Social Activities", "Wellness Programs"]
+    specialties: ["Administration", "Regulatory Compliance", "Facility Management"]
   }
 ];
 
