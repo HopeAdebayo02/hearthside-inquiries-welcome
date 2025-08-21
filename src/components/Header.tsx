@@ -3,7 +3,12 @@ import { Phone, Heart } from "lucide-react";
 const Header = () => {
   return <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-warm-secondary/30">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
+          <img 
+            src="/goshen-logo.png" 
+            alt="Goshen Concept Care Logo" 
+            className="w-12 h-12 md:w-16 md:h-16"
+          />
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-foreground tracking-wide">GOSHEN CONCEPT CARE LLC</h1>
             <p className="text-base md:text-lg text-warm-primary font-semibold">Assisted Living Facility</p>

@@ -19,6 +19,14 @@ const staffMembers = [
     specialties: ["Business Development", "Community Relations", "Quality Assurance"]
   },
   {
+    name: "Samlina Cawray",
+    title: "Administrator",
+    credentials: "Extensive Minnesota Assisted Living Experience",
+    bio: "Samlina has worked with countless assisted living facilities across Minnesota and brings amazing expertise to her administrative role at Goshen Concept Care.",
+    icon: Award,
+    specialties: ["Administration", "Regulatory Compliance", "Facility Management"]
+  },
+  {
     name: "Faith Adebayo",
     title: "Registered Nurse",
     credentials: "RN, 1 Year Experience",
@@ -33,14 +41,6 @@ const staffMembers = [
     bio: "Hope graduated from University of St. Thomas and enjoys coordinating services that enhance the daily lives and experiences of our residents.",
     icon: GraduationCap,
     specialties: ["Resident Services", "Activity Coordination", "Family Communication"]
-  },
-  {
-    name: "Samlina Cawray",
-    title: "Administrator",
-    credentials: "Extensive Minnesota Assisted Living Experience",
-    bio: "Samlina has worked with countless assisted living facilities across Minnesota and brings amazing expertise to her administrative role at Goshen Concept Care.",
-    icon: Award,
-    specialties: ["Administration", "Regulatory Compliance", "Facility Management"]
   }
 ];
 
