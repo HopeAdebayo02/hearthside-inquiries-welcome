@@ -1,16 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import MobileMenu from "@/components/MobileMenu";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+  
   return (
     <header className="fixed top-0 w-full bg-background/98 backdrop-blur-md z-50 border-b-2 border-care-secondary shadow-[var(--shadow-card)]">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-3">
+        <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
           <img 
             src="/lovable-uploads/c6ced647-d0e0-4204-86eb-ad15242f43c9.png" 
             alt="Goshen Concept Care LLC - Professional Assisted Living Facility Logo" 
-            className="w-10 h-10 md:w-14 md:h-14 rounded-lg shadow-sm"
+            className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-lg shadow-sm"
           />
           <div>
             <h1 className="text-lg md:text-2xl font-bold text-foreground tracking-wide leading-tight">
@@ -20,38 +23,46 @@ const Header = () => {
               Assisted Living Facility
             </p>
           </div>
-        </div>
+        </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <button 
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            aria-label="Go to About section"
+          <Link 
+            to="/about" 
+            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+              location.pathname === '/about' ? 'text-primary bg-care-accent' : ''
+            }`}
+            aria-label="Go to About page"
           >
             About
-          </button>
-          <button 
-            onClick={() => document.getElementById('staff')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            aria-label="Go to Staff section"
+          </Link>
+          <Link 
+            to="/staff" 
+            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+              location.pathname === '/staff' ? 'text-primary bg-care-accent' : ''
+            }`}
+            aria-label="Go to Staff page"
           >
             Staff
-          </button>
-          <button 
-            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            aria-label="Go to Services section"
+          </Link>
+          <Link 
+            to="/services" 
+            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+              location.pathname === '/services' ? 'text-primary bg-care-accent' : ''
+            }`}
+            aria-label="Go to Services page"
           >
             Services
-          </button>
-          <button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-            aria-label="Go to Contact section"
+          </Link>
+          <Link 
+            to="/contact" 
+            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+              location.pathname === '/contact' ? 'text-primary bg-care-accent' : ''
+            }`}
+            aria-label="Go to Contact page"
           >
             Contact
-          </button>
+          </Link>
           <Button 
             variant="hero" 
             size="touch" 

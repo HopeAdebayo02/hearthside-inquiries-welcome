@@ -2,20 +2,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    setIsOpen(false);
-  };
+  const location = useLocation();
 
   const menuItems = [
-    { label: "About", id: "about" },
-    { label: "Staff", id: "staff" },
-    { label: "Services", id: "services" },
-    { label: "Contact", id: "contact" },
+    { label: "About", path: "/about" },
+    { label: "Staff", path: "/staff" },
+    { label: "Services", path: "/services" },
+    { label: "Contact", path: "/contact" },
   ];
 
   return (
@@ -46,14 +43,17 @@ const MobileMenu = () => {
           
           <nav className="flex flex-col space-y-4">
             {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-left py-3 px-4 rounded-lg text-foreground hover:bg-care-accent hover:text-primary transition-colors text-lg font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-left py-3 px-4 rounded-lg text-foreground hover:bg-care-accent hover:text-primary transition-colors text-lg font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                  location.pathname === item.path ? 'text-primary bg-care-accent' : ''
+                }`}
                 role="menuitem"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
           
