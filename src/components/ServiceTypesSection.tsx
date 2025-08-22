@@ -71,9 +71,6 @@ const ServiceTypesSection = () => {
               key={index}
               className="border-2 border-care-secondary hover:border-primary/30 hover:shadow-[var(--shadow-primary)] transition-all duration-300 hover:-translate-y-1 bg-background relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 bg-care-accent text-primary font-mono text-sm font-semibold px-4 py-2 rounded-bl-xl border-l-2 border-b-2 border-primary/20">
-                {service.code}
-              </div>
               
               <CardHeader className="text-center pb-6 pt-8">
                 <div className="flex justify-center mb-6">
@@ -107,9 +104,9 @@ const ServiceTypesSection = () => {
                   variant="hero"
                   size="lg"
                   className="w-full font-semibold text-lg min-h-[52px]"
-                  aria-label={`Learn more about ${service.title} (${service.code})`}
+                  aria-label={`Learn more about ${service.title}`}
                 >
-                  Learn More About {service.code}
+                  Learn More About {service.title}
                 </Button>
               </CardContent>
             </Card>

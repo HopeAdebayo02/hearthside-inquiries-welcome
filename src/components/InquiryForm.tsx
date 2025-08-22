@@ -112,27 +112,29 @@ Message: ${formData.message}
                 
                 <button 
                   onClick={() => window.open('mailto:emantop@yahoo.com')}
-                  className="flex items-center space-x-4 w-full text-left hover:bg-warm-primary/5 rounded-lg p-2 transition-colors"
+                  className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
+                  aria-label="Email us at emantop@yahoo.com"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
-                    <Mail className="w-6 h-6 text-warm-primary" />
+                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10">
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">emantop@yahoo.com</p>
-                    <p className="text-muted-foreground">We respond within 2 hours</p>
+                    <p className="font-bold text-foreground text-lg">emantop@yahoo.com</p>
+                    <p className="text-muted-foreground text-sm">We respond within 2 hours</p>
                   </div>
                 </button>
                 
                 <button 
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="flex items-center space-x-4 w-full text-left hover:bg-warm-primary/5 rounded-lg p-2 transition-colors"
+                  className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
+                  aria-label="Schedule a visit to our facility"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 bg-warm-primary/10 rounded-lg">
-                    <Calendar className="w-6 h-6 text-warm-primary" />
+                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10">
+                    <Calendar className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">Schedule a Visit</p>
-                    <p className="text-muted-foreground">Tours available daily</p>
+                    <p className="font-bold text-foreground text-lg">Schedule a Visit</p>
+                    <p className="text-muted-foreground text-sm">Tours available daily</p>
                   </div>
                 </button>
               </CardContent>
