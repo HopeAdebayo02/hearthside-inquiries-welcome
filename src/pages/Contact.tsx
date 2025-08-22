@@ -1,5 +1,6 @@
-import InquiryForm from "@/components/InquiryForm";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -8,10 +9,10 @@ const Contact = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Get In Touch
+              Contact Information
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              We're here to answer your questions and help you explore our assisted living options.
+              Ready to get started? Our inquiry form is on the home page, or reach out directly using the information below.
             </p>
           </div>
         </div>
@@ -20,11 +21,9 @@ const Contact = () => {
       {/* Contact Information */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-foreground mb-8">Contact Information</h2>
-              
-              <div className="flex items-start space-x-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="flex items-start space-x-4 p-6 bg-care-accent/20 rounded-xl">
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
                   <Phone className="w-6 h-6 text-primary" />
                 </div>
@@ -41,7 +40,7 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 p-6 bg-care-accent/20 rounded-xl">
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
@@ -58,7 +57,7 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4 p-6 bg-care-accent/20 rounded-xl">
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
                   <Clock className="w-6 h-6 text-primary" />
                 </div>
@@ -71,10 +70,31 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
+              
+              <div className="flex items-start space-x-4 p-6 bg-care-accent/20 rounded-xl">
+                <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-1">Location</h3>
+                  <p className="text-muted-foreground">
+                    Licensed Assisted Living Facility<br/>
+                    Serving Minnesota Communities
+                  </p>
+                </div>
+              </div>
             </div>
             
-            <div>
-              <InquiryForm />
+            <div className="text-center">
+              <h2 className="text-2xl font-bold text-foreground mb-4">
+                Ready to Start Your Journey?
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Visit our home page to fill out our detailed inquiry form and tell us about your loved one's needs.
+              </p>
+              <Button asChild size="lg" className="min-h-[52px]">
+                <Link to="/">Go to Inquiry Form</Link>
+              </Button>
             </div>
           </div>
         </div>

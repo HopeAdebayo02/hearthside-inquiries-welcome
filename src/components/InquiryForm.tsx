@@ -65,27 +65,32 @@ Message: ${formData.message}
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-primary/5 to-care-accent">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="flex justify-center mb-6">
-              <div className="flex items-center justify-center w-20 h-20 bg-background rounded-xl border-2 border-primary/20 shadow-[var(--shadow-card)]">
-                <Heart className="w-10 h-10 text-primary" />
+    <section id="contact" className="py-20 md:py-32 bg-gradient-to-br from-primary/5 via-care-accent/30 to-primary/10 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-care-accent/20"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-care-accent/20 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-8">
+              <div className="flex items-center justify-center w-24 h-24 bg-background rounded-2xl border-2 border-primary/20 shadow-2xl backdrop-blur-sm">
+                <Heart className="w-12 h-12 text-primary animate-pulse" />
               </div>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-8 leading-tight bg-gradient-to-r from-foreground to-primary bg-clip-text">
               Start Your Journey With Us
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
               Every family's story is unique. Tell us about your loved one, and we'll help you 
               find the perfect care solution together.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Information */}
-            <Card className="bg-background border-2 border-care-secondary shadow-[var(--shadow-primary)] hover:shadow-lg transition-shadow">
+            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl md:text-3xl text-foreground flex items-center gap-3 mb-2">
                   <Phone className="w-7 h-7 text-primary" />
@@ -141,7 +146,7 @@ Message: ${formData.message}
             </Card>
 
             {/* Inquiry Form */}
-            <Card className="bg-background border-2 border-care-secondary shadow-[var(--shadow-primary)] hover:shadow-lg transition-shadow">
+            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl md:text-3xl text-foreground mb-2">
                   Send Us Your Inquiry

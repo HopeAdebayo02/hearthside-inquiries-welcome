@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import InquiryForm from "@/components/InquiryForm";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, Users, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -56,13 +57,20 @@ const Home = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="min-h-[52px]">
-                <Link to="/contact">Get In Touch</Link>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="min-h-[52px]"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Get In Touch
               </Button>
             </div>
           </div>
         </div>
       </section>
+      
+      <InquiryForm />
     </div>
   );
 };

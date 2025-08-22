@@ -33,6 +33,7 @@ const Header = () => {
               location.pathname === '/about' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to About page"
+            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             About
           </Link>
@@ -42,6 +43,7 @@ const Header = () => {
               location.pathname === '/staff' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to Staff page"
+            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             Staff
           </Link>
@@ -51,6 +53,7 @@ const Header = () => {
               location.pathname === '/services' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to Services page"
+            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             Services
           </Link>
@@ -60,6 +63,7 @@ const Header = () => {
               location.pathname === '/contact' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to Contact page"
+            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             Contact
           </Link>
