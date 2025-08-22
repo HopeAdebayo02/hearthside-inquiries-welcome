@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <img 
-            src="/goshen-logo.png" 
+            src="/lovable-uploads/c6ced647-d0e0-4204-86eb-ad15242f43c9.png" 
             alt="Goshen Concept Care LLC - Professional Assisted Living Facility Logo" 
             className="w-10 h-10 md:w-14 md:h-14 rounded-lg shadow-sm"
           />
