@@ -61,6 +61,7 @@ const Footer = () => {
                   to="/about"
                   className="hover:text-primary transition-colors"
                   aria-label="Go to About page"
+                  onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >
                   About Us
                 </Link>
@@ -70,6 +71,7 @@ const Footer = () => {
                   to="/staff"
                   className="hover:text-primary transition-colors"
                   aria-label="Go to Staff page"
+                  onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >
                   Our Team
                 </Link>
@@ -79,6 +81,7 @@ const Footer = () => {
                   to="/services"
                   className="hover:text-primary transition-colors"
                   aria-label="Go to Services page"
+                  onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >
                   Services
                 </Link>
@@ -88,6 +91,7 @@ const Footer = () => {
                   to="/contact"
                   className="hover:text-primary transition-colors"
                   aria-label="Go to Contact page"
+                  onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >
                   Contact
                 </Link>

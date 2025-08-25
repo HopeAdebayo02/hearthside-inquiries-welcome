@@ -1,6 +1,5 @@
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import InquiryForm from "@/components/InquiryForm";
 
 const Contact = () => {
   return (
@@ -87,18 +86,17 @@ const Contact = () => {
             
             <div className="text-center">
               <h2 className="text-2xl font-bold text-foreground mb-4">
-                Ready to Start Your Journey?
+                Get In Touch
               </h2>
               <p className="text-muted-foreground mb-8">
-                Visit our home page to fill out our detailed inquiry form and tell us about your loved one's needs.
+                Fill out our inquiry form below to get personalized information about our services.
               </p>
-              <Button asChild size="lg" className="min-h-[52px]">
-                <Link to="/">Go to Inquiry Form</Link>
-              </Button>
             </div>
           </div>
         </div>
       </section>
+      
+      <InquiryForm />
     </div>
   );
 };
