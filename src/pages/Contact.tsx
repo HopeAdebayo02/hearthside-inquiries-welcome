@@ -77,8 +77,7 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Location</h3>
                   <p className="text-muted-foreground">
-                    Licensed Assisted Living Facility<br/>
-                    Serving Minnesota Communities
+                    1352 Calumet Ave, West St. Paul, MN 55118
                   </p>
                 </div>
               </div>
