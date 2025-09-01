@@ -57,7 +57,7 @@ const MobileMenu = () => {
             ))}
           </nav>
           
-          <div className="border-t border-secondary pt-6 mt-6">
+          <div className="border-t border-secondary pt-6 mt-6 space-y-3">
             <Button 
               variant="hero" 
               size="touch" 
@@ -70,7 +70,19 @@ const MobileMenu = () => {
               <Phone className="w-5 h-5" />
               651-500-0971
             </Button>
-            <p className="text-sm text-muted-foreground text-center mt-2">
+            <Button 
+              variant="outline" 
+              size="touch" 
+              className="w-full flex items-center gap-3 text-lg"
+              onClick={() => {
+                window.open('tel:651-210-5364');
+                setIsOpen(false);
+              }}
+            >
+              <Phone className="w-5 h-5" />
+              651-210-5364
+            </Button>
+            <p className="text-sm text-muted-foreground text-center mt-1">
               Available 24/7
             </p>
           </div>

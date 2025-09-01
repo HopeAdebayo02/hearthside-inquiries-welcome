@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import MobileMenu from "@/components/MobileMenu";
 import { Link, useLocation } from "react-router-dom";
 
@@ -67,17 +73,28 @@ const Header = () => {
           >
             Contact
           </Link>
-          <Button 
-            variant="hero" 
-            size="touch" 
-            className="flex items-center gap-2 font-semibold"
-            onClick={() => window.open('tel:651-500-0971')}
-            aria-label="Call us at 651-500-0971"
-          >
-            <Phone className="w-4 h-4" />
-            <span className="hidden lg:inline">651-500-0971</span>
-            <span className="lg:hidden">Call</span>
-          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button 
+                variant="hero" 
+                size="touch" 
+                className="flex items-center gap-2 font-semibold"
+                aria-label="Call us"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="hidden lg:inline">Call</span>
+                <span className="lg:hidden">Call</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => window.open('tel:651-500-0971')}>
+                651-500-0971
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => window.open('tel:651-210-5364')}>
+                651-210-5364
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         {/* Mobile Menu */}
