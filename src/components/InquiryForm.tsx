@@ -129,15 +129,15 @@ Message: ${formData.message}
                 </button>
                 
                 <button 
-                  onClick={() => window.open('mailto:emantop@yahoo.com')}
+                  onClick={() => window.open('mailto:Hope.adebayo02@gmail.com')}
                   className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
-                  aria-label="Email us at emantop@yahoo.com"
+                  aria-label="Email us at Hope.adebayo02@gmail.com"
                 >
                   <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground text-lg">emantop@yahoo.com</p>
+                    <p className="font-bold text-foreground text-lg">Hope.adebayo02@gmail.com</p>
                     <p className="text-muted-foreground text-sm">We respond within 2 hours</p>
                   </div>
                 </button>

@@ -56,11 +56,11 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-1">Email</h3>
                   <a 
-                    href="mailto:emantop@yahoo.com" 
+                    href="mailto:Hope.adebayo02@gmail.com" 
                     className="text-primary hover:text-primary/80 transition-colors text-lg font-medium"
-                    aria-label="Email us at emantop@yahoo.com"
+                    aria-label="Email us at Hope.adebayo02@gmail.com"
                   >
-                    emantop@yahoo.com
+                    Hope.adebayo02@gmail.com
                   </a>
                   <p className="text-muted-foreground text-sm mt-1">We respond within 2 hours</p>
                 </div>

@@ -48,11 +48,11 @@ const Footer = () => {
               </div>
               <div>
                 <a 
-                  href="mailto:emantop@yahoo.com" 
+                  href="mailto:Hope.adebayo02@gmail.com" 
                   className="font-medium text-foreground hover:text-primary transition-colors"
-                  aria-label="Email us at emantop@yahoo.com"
+                  aria-label="Email us at Hope.adebayo02@gmail.com"
                 >
-                  emantop@yahoo.com
+                  Hope.adebayo02@gmail.com
                 </a>
                 <p className="text-sm">We respond within 2 hours</p>
               </div>
