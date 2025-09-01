@@ -15,47 +15,43 @@ const InquiryForm = () => {
     email: "",
     phone: "",
     relationship: "",
-    urgency: "",
+    careType: "",
+    timeframe: "",
+    preferredContact: "",
     message: ""
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
-      // Create mailto link with form data
-      const subject = `New Inquiry from ${formData.name}`;
-      const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Relationship: ${formData.relationship}
-Urgency: ${formData.urgency}
-Message: ${formData.message}
-      `;
-      
-      const mailtoLink = `mailto:Hope.adebayo02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(mailtoLink);
-      
+      const res = await fetch("/.netlify/functions/send-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("request failed");
+
       toast({
-        title: "Thank you for your inquiry!",
-        description: "We'll contact you within 24 hours to discuss your needs.",
+        title: "Inquiry sent!",
+        description: "We received your message and will reply soon.",
       });
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
         relationship: "",
-        urgency: "",
-        message: ""
+        careType: "",
+        timeframe: "",
+        preferredContact: "",
+        message: "",
       });
     } catch (error) {
       toast({
-        title: "Error sending inquiry",
+        title: "Could not send inquiry",
         description: "Please try again or call us directly.",
-        variant: "destructive"
+        variant: "destructive",
       });
     }
   };
@@ -165,7 +161,7 @@ Message: ${formData.message}
                   Send Us Your Inquiry
                 </CardTitle>
                 <CardDescription className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Tell us about your loved one's needs and we'll create a personalized care plan.
+                  Answer a few quick questions and we’ll reach out with next steps.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -183,7 +179,7 @@ Message: ${formData.message}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">Best Email *</Label>
                       <Input
                         id="email"
                         type="email"
@@ -197,7 +193,7 @@ Message: ${formData.message}
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Label htmlFor="phone">Best Phone *</Label>
                       <Input
                         id="phone"
                         value={formData.phone}
@@ -207,7 +203,7 @@ Message: ${formData.message}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="relationship">Your Relationship</Label>
+                      <Label htmlFor="relationship">Who are you to the person needing care?</Label>
                       <Select onValueChange={(value) => handleInputChange("relationship", value)}>
                         <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
                           <SelectValue placeholder="Select relationship" />
@@ -225,16 +221,46 @@ Message: ${formData.message}
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="urgency">How soon are you looking for care?</Label>
-                    <Select onValueChange={(value) => handleInputChange("urgency", value)}>
+                    <Label htmlFor="careType">What kind of support are you looking for?</Label>
+                    <Select onValueChange={(value) => handleInputChange("careType", value)}>
+                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                        <SelectValue placeholder="Choose care type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="24hr">24-Hour Assisted Living</SelectItem>
+                        <SelectItem value="personal-care">Personal Care</SelectItem>
+                        <SelectItem value="medication">Medication Management</SelectItem>
+                        <SelectItem value="activities">Activity Programs</SelectItem>
+                        <SelectItem value="other">Not sure yet</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="timeframe">When are you hoping to start?</Label>
+                    <Select onValueChange={(value) => handleInputChange("timeframe", value)}>
                       <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
                         <SelectValue placeholder="Select timeframe" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="immediate">Immediately (within 1 week)</SelectItem>
-                        <SelectItem value="soon">Soon (within 1 month)</SelectItem>
-                        <SelectItem value="planning">Planning ahead (2-6 months)</SelectItem>
-                        <SelectItem value="future">Future planning (6+ months)</SelectItem>
+                        <SelectItem value="soon">Within 1 month</SelectItem>
+                        <SelectItem value="planning">2–6 months</SelectItem>
+                        <SelectItem value="future">6+ months</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="preferredContact">How should we contact you?</Label>
+                    <Select onValueChange={(value) => handleInputChange("preferredContact", value)}>
+                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                        <SelectValue placeholder="Email or phone" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="email">Email</SelectItem>
+                        <SelectItem value="phone">Phone</SelectItem>
+                        <SelectItem value="either">Either is fine</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
