@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, Shield, Users } from "lucide-react";
-import heroImage from "/lovable-uploads/0132b0bd-68c1-4d6b-befb-c41cbb9fd606.png";
+import fallbackHero from "/gohen-uploads/0132b0bd-68c1-4d6b-befb-c41cbb9fd606.png";
 
 const HeroSection = () => {
+  const [bgUrl, setBgUrl] = useState<string>(fallbackHero);
+
+  useEffect(() => {
+    const candidate = "/gohen-uploads/house-hero.jpg";
+    const img = new Image();
+    img.onload = () => setBgUrl(candidate);
+    img.onerror = () => setBgUrl(fallbackHero);
+    img.src = candidate;
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${bgUrl})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-primary/30"></div>
+        <div className="absolute inset-0 bg-black/45"></div>
       </div>
       
       {/* Content */}

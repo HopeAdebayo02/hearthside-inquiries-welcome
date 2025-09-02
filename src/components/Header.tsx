@@ -13,11 +13,11 @@ const Header = () => {
   const location = useLocation();
   
   return (
-    <header className="fixed top-0 w-full bg-background/98 backdrop-blur-md z-50 border-b-2 border-care-secondary shadow-[var(--shadow-card)]">
+    <header className="fixed top-0 w-full bg-background backdrop-blur-md z-50 border-b-2 border-care-secondary shadow-[var(--shadow-card)]">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
           <img 
-            src="/lovable-uploads/c6ced647-d0e0-4204-86eb-ad15242f43c9.png" 
+            src="/gohen-uploads/c6ced647-d0e0-4204-86eb-ad15242f43c9.png" 
             alt="Goshen Concept Care LLC - Professional Assisted Living Facility Logo" 
             className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-lg shadow-sm"
           />
@@ -87,9 +87,6 @@ const Header = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => window.open('tel:651-500-0971')}>
-                651-500-0971
-              </DropdownMenuItem>
               <DropdownMenuItem onClick={() => window.open('tel:651-210-5364')}>
                 651-210-5364
               </DropdownMenuItem>

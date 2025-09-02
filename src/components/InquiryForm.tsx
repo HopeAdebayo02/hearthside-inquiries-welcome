@@ -25,16 +25,18 @@ const InquiryForm = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("/.netlify/functions/send-inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!res.ok) throw new Error("request failed");
+      const toEmail = "Hope.adebayo02@gmail.com";
+      const subject = `New inquiry from ${formData.name || "(no name)"}`;
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nRelationship: ${formData.relationship || "—"}\nCare Type: ${formData.careType || "—"}\nTimeframe: ${formData.timeframe || "—"}\nPreferred Contact: ${formData.preferredContact || "—"}\n\nMessage:\n${formData.message}`;
+
+      const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Open user's default email client with a pre-filled message
+      window.location.href = mailtoUrl;
 
       toast({
-        title: "Inquiry sent!",
-        description: "We received your message and will reply soon.",
+        title: "Compose email opened",
+        description: "Your email client should open with the inquiry pre-filled.",
       });
 
       setFormData({
@@ -49,8 +51,8 @@ const InquiryForm = () => {
       });
     } catch (error) {
       toast({
-        title: "Could not send inquiry",
-        description: "Please try again or call us directly.",
+        title: "Could not open email client",
+        description: "Please email us directly at Hope.adebayo02@gmail.com.",
         variant: "destructive",
       });
     }
@@ -97,19 +99,6 @@ const InquiryForm = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <button 
-                  onClick={() => window.open('tel:651-500-0971')}
-                  className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
-                  aria-label="Call us at 651-500-0971"
-                >
-                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground text-lg">651-500-0971</p>
-                    <p className="text-muted-foreground text-sm">Available 24/7</p>
-                  </div>
-                </button>
                 <button 
                   onClick={() => window.open('tel:651-210-5364')}
                   className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
@@ -227,11 +216,8 @@ const InquiryForm = () => {
                         <SelectValue placeholder="Choose care type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="24hr">24-Hour Assisted Living</SelectItem>
-                        <SelectItem value="personal-care">Personal Care</SelectItem>
-                        <SelectItem value="medication">Medication Management</SelectItem>
-                        <SelectItem value="activities">Activity Programs</SelectItem>
-                        <SelectItem value="other">Not sure yet</SelectItem>
+                        <SelectItem value="144G">24-Hour Assisted Living (144G)</SelectItem>
+                        <SelectItem value="245D">Homemaker Services (245D)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

@@ -63,47 +63,61 @@ const StaffSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
-          {staffMembers.map((member, index) => (
-            <Card 
-              key={index} 
-              className="border-2 border-care-secondary bg-background hover:shadow-[var(--shadow-primary)] hover:border-primary/20 transition-all duration-300 group"
-            >
-              <CardHeader className="pb-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-16 h-16 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors flex-shrink-0">
-                    <member.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <CardTitle className="text-xl md:text-2xl font-bold text-foreground mb-2 leading-tight">
-                      {member.name}
-                    </CardTitle>
-                    <CardDescription className="text-primary font-bold mb-2 text-base">
-                      {member.title}
-                    </CardDescription>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      {member.credentials}
+          {staffMembers.map((member, index) => {
+            const isHope = member.name === "Hope Adebayo";
+            return (
+              <div key={index} className={isHope ? "lg:col-span-2 flex justify-center" : ""}>
+                <Card 
+                  className={
+                    "border-2 border-care-secondary bg-background hover:shadow-[var(--shadow-primary)] hover:border-primary/20 transition-all duration-300 group " +
+                    (isHope ? "max-w-2xl w-full" : "")
+                  }
+                >
+                  <CardHeader className="pb-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="flex items-center justify-center w-16 h-16 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors flex-shrink-0">
+                        <member.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-xl md:text-2xl font-bold text-foreground mb-2 leading-tight">
+                          {member.name}
+                        </CardTitle>
+                        <CardDescription className="text-primary font-bold mb-2 text-base">
+                          {member.title}
+                        </CardDescription>
+                        <p className="text-sm text-muted-foreground font-medium">
+                          {member.credentials}
+                        </p>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-muted-foreground mb-6 leading-relaxed text-base">
+                      {member.bio}
                     </p>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-muted-foreground mb-6 leading-relaxed text-base">
-                  {member.bio}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {member.specialties.map((specialty, idx) => (
-                    <span 
-                      key={idx}
-                      className="px-3 py-2 bg-care-accent text-primary text-sm rounded-lg font-medium border border-primary/10"
-                    >
-                      {specialty}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                    <div className="flex flex-wrap gap-2">
+                      {member.specialties.map((specialty, idx) => (
+                        <span 
+                          key={idx}
+                          className="px-3 py-2 bg-care-accent text-primary text-sm rounded-lg font-medium border border-primary/10"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
         </div>
+
+        {/* Ensure Hope Adebayo card centers on its row when items wrap */}
+        <style>{`
+          @media (min-width: 1024px) {
+            #staff .grid { align-items: stretch; }
+          }
+        `}</style>
 
         <div className="bg-gradient-to-br from-primary/5 to-care-accent rounded-2xl p-8 md:p-12 text-center border-2 border-primary/10 shadow-[var(--shadow-card)]">
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">

@@ -19,9 +19,7 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li>Homemaker Services</li>
               <li>24-Hour Assisted Living</li>
-              <li>Personal Care</li>
-              <li>Medication Management</li>
-              <li>Activity Programs</li>
+              
             </ul>
           </div>
 
@@ -30,13 +28,6 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-foreground">Contact</h4>
             <div className="space-y-3 text-muted-foreground">
               <div className="space-y-1">
-                <a 
-                  href="tel:651-500-0971" 
-                  className="font-medium text-foreground hover:text-primary transition-colors block"
-                  aria-label="Call us at 651-500-0971"
-                >
-                  651-500-0971
-                </a>
                 <a 
                   href="tel:651-210-5364" 
                   className="font-medium text-foreground hover:text-primary transition-colors block"

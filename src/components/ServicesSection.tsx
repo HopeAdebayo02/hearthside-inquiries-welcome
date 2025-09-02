@@ -1,62 +1,20 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
-  Heart, 
-  Utensils, 
-  Activity, 
-  Users, 
-  ShieldCheck, 
   Home,
-  Stethoscope,
-  Car
+  Clock
 } from "lucide-react";
 
 const services = [
   {
-    icon: Heart,
-    title: "Personal Care",
-    description: "Compassionate assistance with daily activities including bathing, dressing, and medication management.",
-    color: "text-primary"
-  },
-  {
-    icon: Utensils,
-    title: "Nutritious Dining",
-    description: "Chef-prepared meals accommodating dietary restrictions and family recipe preferences.",
-    color: "text-primary"
-  },
-  {
-    icon: Activity,
-    title: "Wellness Programs",
-    description: "Physical therapy, exercise classes, and health monitoring tailored to individual needs.",
-    color: "text-primary"
-  },
-  {
-    icon: Users,
-    title: "Social Activities",
-    description: "Family gatherings, community events, and social programs that keep residents connected.",
-    color: "text-primary"
-  },
-  {
-    icon: ShieldCheck,
-    title: "24/7 Security",
-    description: "Round-the-clock safety monitoring with emergency response systems and trained staff.",
+    icon: Clock,
+    title: "24-Hour Assisted Living (144G)",
+    description: "Round-the-clock residential support with professional caregivers, medication management, meals, and daily living assistance in a warm, family-oriented community.",
     color: "text-primary"
   },
   {
     icon: Home,
-    title: "Comfortable Living",
-    description: "Private and semi-private rooms designed to feel like home with personal touches welcome.",
-    color: "text-primary"
-  },
-  {
-    icon: Stethoscope,
-    title: "Healthcare Coordination",
-    description: "On-site medical services and coordination with family physicians and specialists.",
-    color: "text-primary"
-  },
-  {
-    icon: Car,
-    title: "Transportation",
-    description: "Scheduled transportation for medical appointments, shopping, and community outings.",
+    title: "Homemaker Services (245D)",
+    description: "In-home support including personal care, light housekeeping, meal preparation, medication reminders, companionship, and transportation assistance.",
     color: "text-primary"
   }
 ];
@@ -67,15 +25,14 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Comprehensive Care Services
+            Our Core Services
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Our family-centered approach ensures your loved one receives personalized care 
-            while maintaining their independence and dignity in a warm, supportive environment.
+            We focus on two specialized offerings designed to meet families where they are—either at home or in our 24/7 assisted living community.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={index} 

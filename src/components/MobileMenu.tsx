@@ -59,18 +59,6 @@ const MobileMenu = () => {
           
           <div className="border-t border-secondary pt-6 mt-6 space-y-3">
             <Button 
-              variant="hero" 
-              size="touch" 
-              className="w-full flex items-center gap-3 text-lg"
-              onClick={() => {
-                window.open('tel:651-500-0971');
-                setIsOpen(false);
-              }}
-            >
-              <Phone className="w-5 h-5" />
-              651-500-0971
-            </Button>
-            <Button 
               variant="outline" 
               size="touch" 
               className="w-full flex items-center gap-3 text-lg"
