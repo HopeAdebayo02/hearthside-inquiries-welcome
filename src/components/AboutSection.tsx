@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Users, Award, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 const stats = [{
   icon: Users,
   number: "15+",
@@ -88,7 +89,7 @@ const AboutSection = () => {
         </div>
 
         {/* Our Values */}
-        <div className="bg-gradient-to-br from-primary/5 to-care-accent rounded-2xl p-8 md:p-12 mb-20 border-2 border-primary/10 shadow-[var(--shadow-card)]">
+        <div className="bg-gradient-to-br from-primary/5 to-care-accent rounded-2xl p-8 md:p-12 mb-8 border-2 border-primary/10 shadow-[var(--shadow-card)]">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-8">Our Core Values</h3>
             <div className="grid md:grid-cols-3 gap-8 md:gap-12">
@@ -129,22 +130,24 @@ const AboutSection = () => {
           </div>
         </div>
 
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Button 
-            variant="hero" 
-            size="lg" 
-            className="text-lg px-8 py-4 font-semibold min-h-[52px]"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            aria-label="Schedule your personal tour of our facility today"
-          >
-            Schedule Your Personal Tour Today
-          </Button>
-          <p className="text-muted-foreground mt-4 text-base md:text-lg">
-            Experience the Goshen Concept Care difference in person
+        {/* Ready to Learn More */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Ready to Learn More?
+          </h3>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Contact us today to schedule a visit and see how we can help your loved one thrive.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="min-h-[52px]">
+              <Link to="/contact">Schedule a Visit</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="min-h-[52px]">
+              <Link to="/services">View Our Services</Link>
+            </Button>
+          </div>
         </div>
+
       </div>
     </section>
   );

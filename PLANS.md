@@ -22,6 +22,10 @@ This document tracks current goals, decisions, and next actions for the site.
 - Updated phone numbers (kept 651-210-5364 only).
 - Centered Hope Adebayo card; cleaned services grid.
 - Deployed latest version to production.
+- Removed "Schedule Your Personal Tour Today" button and heading from About section.
+- Moved "Ready to Learn More" section to be positioned between core values and footer, reduced spacing between sections.
+- Moved "Experience the Difference" section to be positioned after Hope Adebayo card, refined spacing for optimal visual balance.
+- Switched order of "Not sure which option is right for you?" and "Waiver Services Accepted" sections on Services page.
 
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).

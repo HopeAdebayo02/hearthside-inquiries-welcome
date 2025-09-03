@@ -1,5 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Heart, GraduationCap, Award, Stethoscope } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const staffMembers = [
   {
@@ -47,11 +49,11 @@ const staffMembers = [
 
 const StaffSection = () => {
   return (
-    <section id="staff" className="py-16 md:py-24 bg-background">
+    <section id="staff" className="pt-16 md:pt-24 pb-16 md:pb-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Page heading is rendered by Staff page; remove duplicated header here for clarity */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
           {staffMembers.map((member, index) => {
             const isHope = member.name === "Hope Adebayo";
             return (
@@ -107,6 +109,29 @@ const StaffSection = () => {
             #staff .grid { align-items: stretch; }
           }
         `}</style>
+
+        {/* Experience the Difference */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Experience the Difference
+          </h3>
+          <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Our team's experience and dedication make all the difference in providing quality assisted living care.
+            We're here to support you and your family every step of the way.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="min-h-[52px]">
+              <Link to="/contact#contact" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
+                Schedule a Meeting
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="min-h-[52px]">
+              <Link to="/services" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
+                View Our Services
+              </Link>
+            </Button>
+          </div>
+        </div>
 
         {/* Removed 24/7 Care Excellence section per request */}
       </div>

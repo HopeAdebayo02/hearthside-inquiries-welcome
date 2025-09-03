@@ -7,23 +7,30 @@ const Services = () => {
     <div className="min-h-screen pt-20">
       {/* Keep a single focused section for options */}
       <ServiceTypesSection />
-      
-      {/* Waiver programs banner */}
+
+      {/* Consultation section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="bg-gradient-to-br from-primary/5 to-care-accent rounded-2xl p-6 md:p-8 text-center border-2 border-primary/10 shadow-[var(--shadow-card)] max-w-5xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">Waiver Services Accepted</h3>
-            <p className="text-muted-foreground md:text-lg mb-4">
-              We proudly accept CADI, EW, BI waivers, and Private Pay.
+          <div className="text-center">
+            <p className="text-muted-foreground mb-6 text-base md:text-lg">
+              Not sure which option is right for you?
             </p>
-            <Button asChild variant="outline" size="lg">
+            <Button
+              asChild
+              variant="care"
+              size="lg"
+              className="font-semibold text-lg min-h-[52px]"
+              aria-label="Contact us for a consultation to determine the best care option"
+            >
               <Link to="/contact#contact" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
-                Ask About Eligibility
+                Contact Us for a Consultation
               </Link>
             </Button>
           </div>
         </div>
       </section>
+
+
     </div>
   );
 };

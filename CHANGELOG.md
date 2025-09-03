@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 - Tweak colors and spacing based on feedback.
+- Removed "Schedule Your Personal Tour Today" button and heading from About section.
+- Moved "Ready to Learn More" section to be positioned between core values and footer, reduced spacing between sections.
+- Moved "Experience the Difference" section to be positioned after Hope Adebayo card, refined spacing for optimal visual balance.
+- Switched order of "Not sure which option is right for you?" and "Waiver Services Accepted" sections on Services page.
 
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.

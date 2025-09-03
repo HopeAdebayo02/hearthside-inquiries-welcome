@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Home, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const serviceTypes = [
   {
@@ -122,19 +123,19 @@ const ServiceTypesSection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-6 text-base md:text-lg">
-            Not sure which option is right for you?
-          </p>
-          <Button 
-            variant="care" 
-            size="lg"
-            onClick={() => { window.location.href = '/contact#contact'; setTimeout(() => window.scrollTo(0,0), 50); }}
-            className="font-semibold text-lg min-h-[52px]"
-            aria-label="Contact us for a consultation to determine the best care option"
-          >
-            Contact Us for a Consultation
-          </Button>
+        {/* Waiver programs banner */}
+        <div className="mt-16">
+          <div className="bg-gradient-to-br from-primary/5 to-care-accent rounded-2xl p-6 md:p-8 text-center border-2 border-primary/10 shadow-[var(--shadow-card)] max-w-5xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">Waiver Services Accepted</h3>
+            <p className="text-muted-foreground md:text-lg mb-4">
+              We proudly accept CADI, EW, BI waivers, and Private Pay.
+            </p>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/contact" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
+                Ask About Eligibility
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
