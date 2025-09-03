@@ -8,6 +8,15 @@ All notable changes to this project will be documented in this file.
 - Moved "Ready to Learn More" section to be positioned between core values and footer, reduced spacing between sections.
 - Moved "Experience the Difference" section to be positioned after Hope Adebayo card, refined spacing for optimal visual balance.
 - Switched order of "Not sure which option is right for you?" and "Waiver Services Accepted" sections on Services page.
+- Improved contact information description and card spacing on Contact page.
+- Changed "Best Email" to "Email" in contact form for clarity.
+- Fixed VR services button to navigate to top of Contact page.
+- Updated "Learn More" buttons on Services page to navigate to Contact page with service pre-selection.
+- Performance optimization: removed unused dependencies (@tanstack/react-query, resend, zod) reducing bundle size.
+- Code cleanup: removed redundant imports and simplified App.tsx structure.
+- UI improvement: updated phone number description from "Available 24/7" to "Main office line" for clarity.
+- Enhanced contact section: added emergency contact, business hours, and location information to reduce white space and improve user experience.
+- Analytics implementation: added Google Analytics 4 with custom event tracking for form submissions, phone clicks, and email interactions.
 
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.

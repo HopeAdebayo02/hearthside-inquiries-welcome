@@ -21,7 +21,7 @@ const Contact = () => {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
               <div className="flex items-start space-x-4 p-6 bg-care-accent/20 rounded-xl">
                 <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg flex-shrink-0">
                   <Phone className="w-6 h-6 text-primary" />
@@ -37,7 +37,7 @@ const Contact = () => {
                       651-210-5364
                     </a>
                   </div>
-                  <p className="text-muted-foreground text-sm mt-1">Available 24/7 for emergencies</p>
+                  <p className="text-muted-foreground text-sm mt-1">Available 24/7 for your care needs</p>
                 </div>
               </div>
               

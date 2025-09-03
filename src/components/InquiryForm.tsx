@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, Calendar, Heart } from "lucide-react";
+import { Phone, Mail, Heart, Clock, MapPin } from "lucide-react";
 
 const InquiryForm = () => {
   const { toast } = useToast();
@@ -30,6 +30,16 @@ const InquiryForm = () => {
       const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nRelationship: ${formData.relationship || "—"}\nCare Type: ${formData.careType || "—"}\nTimeframe: ${formData.timeframe || "—"}\nPreferred Contact: ${formData.preferredContact || "—"}\n\nMessage:\n${formData.message}`;
 
       const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Track form submission event
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submission', {
+          event_category: 'engagement',
+          event_label: 'contact_form',
+          value: 1,
+          custom_parameter_1: formData.careType || 'general_inquiry'
+        });
+      }
 
       // Open user's default email client with a pre-filled message
       window.location.href = mailtoUrl;
@@ -99,8 +109,16 @@ const InquiryForm = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <button 
-                  onClick={() => window.open('tel:651-210-5364')}
+                <button
+                  onClick={() => {
+                    if (typeof gtag !== 'undefined') {
+                      gtag('event', 'phone_click', {
+                        event_category: 'contact',
+                        event_label: 'main_office_line'
+                      });
+                    }
+                    window.open('tel:651-210-5364');
+                  }}
                   className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
                   aria-label="Call us at 651-210-5364"
                 >
@@ -109,12 +127,20 @@ const InquiryForm = () => {
                   </div>
                   <div>
                     <p className="font-bold text-foreground text-lg">651-210-5364</p>
-                    <p className="text-muted-foreground text-sm">Alternate line</p>
+                    <p className="text-muted-foreground text-sm">Main office line</p>
                   </div>
                 </button>
                 
-                <button 
-                  onClick={() => window.open('mailto:Hope.adebayo02@gmail.com')}
+                <button
+                  onClick={() => {
+                    if (typeof gtag !== 'undefined') {
+                      gtag('event', 'email_click', {
+                        event_category: 'contact',
+                        event_label: 'primary_email'
+                      });
+                    }
+                    window.open('mailto:Hope.adebayo02@gmail.com');
+                  }}
                   className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
                   aria-label="Email us at Hope.adebayo02@gmail.com"
                 >
@@ -126,20 +152,37 @@ const InquiryForm = () => {
                     <p className="text-muted-foreground text-sm">We respond within 2 hours</p>
                   </div>
                 </button>
-                
-                <button 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
-                  aria-label="Schedule a visit to our facility"
-                >
-                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10">
-                    <Calendar className="w-6 h-6 text-primary" />
+
+
+
+                <div className="flex items-start space-x-4 w-full text-left bg-care-accent/50 rounded-xl p-4 border-2 border-primary/10 min-h-[68px]">
+                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10 flex-shrink-0">
+                    <Clock className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground text-lg">Schedule a Visit</p>
-                    <p className="text-muted-foreground text-sm">Tours available daily</p>
+                    <p className="font-bold text-foreground text-lg mb-1">Business Hours</p>
+                    <div className="text-muted-foreground text-sm space-y-1">
+                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                      <p>Saturday: 9:00 AM - 4:00 PM</p>
+                      <p>Sunday: By appointment</p>
+                    </div>
                   </div>
-                </button>
+                </div>
+
+                <div className="flex items-start space-x-4 w-full text-left bg-care-accent/50 rounded-xl p-4 border-2 border-primary/10 min-h-[68px]">
+                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10 flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-foreground text-lg mb-1">Our Location</p>
+                    <p className="text-muted-foreground text-sm">
+                      1352 Calumet Ave<br />
+                      West St. Paul, MN 55118
+                    </p>
+                  </div>
+                </div>
+                
+
               </CardContent>
             </Card>
 
@@ -168,7 +211,7 @@ const InquiryForm = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Best Email *</Label>
+                      <Label htmlFor="email">Email *</Label>
                       <Input
                         id="email"
                         type="email"
@@ -182,7 +225,7 @@ const InquiryForm = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Best Phone *</Label>
+                      <Label htmlFor="phone">Phone *</Label>
                       <Input
                         id="phone"
                         value={formData.phone}

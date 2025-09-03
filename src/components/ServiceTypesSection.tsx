@@ -37,21 +37,6 @@ const serviceTypes = [
 ];
 
 const ServiceTypesSection = () => {
-  const handleServiceInquiry = (serviceCode: string, serviceTitle: string) => {
-    // Scroll to inquiry form and potentially pre-fill service type
-    const inquiryForm = document.getElementById('contact');
-    if (inquiryForm) {
-      inquiryForm.scrollIntoView({ behavior: 'smooth' });
-      
-      // Store selected service type for form
-      sessionStorage.setItem('selectedServiceType', `${serviceCode} - ${serviceTitle}`);
-      
-      // Dispatch custom event to notify form component
-      window.dispatchEvent(new CustomEvent('serviceTypeSelected', { 
-        detail: { code: serviceCode, title: serviceTitle }
-      }));
-    }
-  };
 
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-care-accent to-background">
@@ -100,14 +85,21 @@ const ServiceTypesSection = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button 
-                    onClick={() => handleServiceInquiry(service.code, service.title)}
+                  <Button
+                    asChild
                     variant="hero"
                     size="lg"
                     className="w-full font-semibold text-lg min-h-[52px]"
                     aria-label={`Learn more about ${service.title}`}
                   >
-                    Learn More
+                    <Link to="/contact" onClick={() => {
+                      sessionStorage.setItem('selectedServiceType', `${service.code} - ${service.title}`);
+                      window.dispatchEvent(new CustomEvent('serviceTypeSelected', {
+                        detail: { code: service.code, title: service.title }
+                      }));
+                    }}>
+                      Learn More
+                    </Link>
                   </Button>
                   <Button 
                     variant="outline"
@@ -131,7 +123,7 @@ const ServiceTypesSection = () => {
               We proudly accept CADI, EW, BI waivers, and Private Pay.
             </p>
             <Button asChild variant="outline" size="lg">
-              <Link to="/contact" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
+              <Link to="/contact">
                 Ask About Eligibility
               </Link>
             </Button>

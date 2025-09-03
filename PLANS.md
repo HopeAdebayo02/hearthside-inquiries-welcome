@@ -26,6 +26,15 @@ This document tracks current goals, decisions, and next actions for the site.
 - Moved "Ready to Learn More" section to be positioned between core values and footer, reduced spacing between sections.
 - Moved "Experience the Difference" section to be positioned after Hope Adebayo card, refined spacing for optimal visual balance.
 - Switched order of "Not sure which option is right for you?" and "Waiver Services Accepted" sections on Services page.
+- Fixed contact information description and improved card spacing on Contact page.
+- Changed "Best Email" to "Email" in contact form.
+- Fixed VR services button to navigate to top of Contact page.
+- Fixed "Learn More" buttons on Services page to navigate to Contact page with service selection.
+- Optimized project efficiency: removed unused @tanstack/react-query, resend, and zod dependencies.
+- Cleaned up unused code: removed redundant Calendar import, simplified App.tsx by removing unnecessary QueryClient wrapper.
+- Improved contact form labels: changed phone description from "Available 24/7" to "Main office line".
+- Enhanced "Get in Touch" section: added emergency line, business hours, and location to reduce white space and provide comprehensive contact options.
+- Added Google Analytics 4 tracking: implemented comprehensive analytics for visitor tracking, session duration, and user interactions (form submissions, phone/email clicks).
 
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).

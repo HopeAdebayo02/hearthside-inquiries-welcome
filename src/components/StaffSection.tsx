@@ -49,7 +49,7 @@ const staffMembers = [
 
 const StaffSection = () => {
   return (
-    <section id="staff" className="pt-16 md:pt-24 pb-16 md:pb-24 bg-background">
+    <section id="staff" className="pt-2 md:pt-4 pb-16 md:pb-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         {/* Page heading is rendered by Staff page; remove duplicated header here for clarity */}
 
