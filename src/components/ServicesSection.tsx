@@ -24,12 +24,7 @@ const ServicesSection = () => {
     <section id="services" className="py-16 md:py-24 bg-gradient-to-b from-background to-care-accent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-            Our Core Services
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            We focus on two specialized offerings designed to meet families where they are—either at home or in our 24/7 assisted living community.
-          </p>
+          {/* Removed extra heading to avoid repetition with page header */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
