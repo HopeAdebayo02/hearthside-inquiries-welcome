@@ -15,3 +15,8 @@ All notable changes to this project will be documented in this file.
 - Ensure service buttons navigate to Contact; Meet Our Team scrolls to top.
 - Update structured data and README.
 - Deploy to Netlify production.
+
+## [2025-09-03] UI tweaks and waiver banner
+- Remove hero heart badge.
+- Delete 24/7 Care Excellence section from Staff page and incorporate copy into header paragraph.
+- Add Services waiver acceptance banner (CADI, EW, BI, Private Pay) with Contact CTA.

@@ -26,3 +26,8 @@ This document tracks current goals, decisions, and next actions for the site.
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).
 - Add analytics and basic event tracking for CTAs (optional).
+
+## Updates (latest)
+- Removed decorative heart badge from hero for cleaner UI.
+- Removed 24/7 Care Excellence section from Staff; merged message into Staff page intro.
+- Added Waiver Services banner on Services page (CADI, EW, BI, Private Pay) with CTA to Contact.
