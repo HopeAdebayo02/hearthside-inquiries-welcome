@@ -15,47 +15,45 @@ const InquiryForm = () => {
     email: "",
     phone: "",
     relationship: "",
-    urgency: "",
+    careType: "",
+    timeframe: "",
+    preferredContact: "",
     message: ""
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
-      // Create mailto link with form data
-      const subject = `New Inquiry from ${formData.name}`;
-      const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Relationship: ${formData.relationship}
-Urgency: ${formData.urgency}
-Message: ${formData.message}
-      `;
-      
-      const mailtoLink = `mailto:Hope.adebayo02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(mailtoLink);
-      
+      const toEmail = "Hope.adebayo02@gmail.com";
+      const subject = `New inquiry from ${formData.name || "(no name)"}`;
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nRelationship: ${formData.relationship || "—"}\nCare Type: ${formData.careType || "—"}\nTimeframe: ${formData.timeframe || "—"}\nPreferred Contact: ${formData.preferredContact || "—"}\n\nMessage:\n${formData.message}`;
+
+      const mailtoUrl = `mailto:${toEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Open user's default email client with a pre-filled message
+      window.location.href = mailtoUrl;
+
       toast({
-        title: "Thank you for your inquiry!",
-        description: "We'll contact you within 24 hours to discuss your needs.",
+        title: "Compose email opened",
+        description: "Your email client should open with the inquiry pre-filled.",
       });
 
-      // Reset form
       setFormData({
         name: "",
         email: "",
         phone: "",
         relationship: "",
-        urgency: "",
-        message: ""
+        careType: "",
+        timeframe: "",
+        preferredContact: "",
+        message: "",
       });
     } catch (error) {
       toast({
-        title: "Error sending inquiry",
-        description: "Please try again or call us directly.",
-        variant: "destructive"
+        title: "Could not open email client",
+        description: "Please email us directly at Hope.adebayo02@gmail.com.",
+        variant: "destructive",
       });
     }
   };
@@ -101,19 +99,6 @@ Message: ${formData.message}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
-                <button 
-                  onClick={() => window.open('tel:651-500-0971')}
-                  className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
-                  aria-label="Call us at 651-500-0971"
-                >
-                  <div className="flex items-center justify-center w-14 h-14 bg-care-accent rounded-xl border-2 border-primary/10">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground text-lg">651-500-0971</p>
-                    <p className="text-muted-foreground text-sm">Available 24/7</p>
-                  </div>
-                </button>
                 <button 
                   onClick={() => window.open('tel:651-210-5364')}
                   className="flex items-center space-x-4 w-full text-left hover:bg-care-accent rounded-xl p-4 transition-all duration-200 border-2 border-transparent hover:border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 min-h-[68px]"
@@ -165,7 +150,7 @@ Message: ${formData.message}
                   Send Us Your Inquiry
                 </CardTitle>
                 <CardDescription className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Tell us about your loved one's needs and we'll create a personalized care plan.
+                  Answer a few quick questions and we’ll reach out with next steps.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -183,7 +168,7 @@ Message: ${formData.message}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">Best Email *</Label>
                       <Input
                         id="email"
                         type="email"
@@ -197,7 +182,7 @@ Message: ${formData.message}
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Label htmlFor="phone">Best Phone *</Label>
                       <Input
                         id="phone"
                         value={formData.phone}
@@ -207,7 +192,7 @@ Message: ${formData.message}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="relationship">Your Relationship</Label>
+                      <Label htmlFor="relationship">Who are you to the person needing care?</Label>
                       <Select onValueChange={(value) => handleInputChange("relationship", value)}>
                         <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
                           <SelectValue placeholder="Select relationship" />
@@ -225,16 +210,43 @@ Message: ${formData.message}
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="urgency">How soon are you looking for care?</Label>
-                    <Select onValueChange={(value) => handleInputChange("urgency", value)}>
+                    <Label htmlFor="careType">What kind of support are you looking for?</Label>
+                    <Select onValueChange={(value) => handleInputChange("careType", value)}>
+                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                        <SelectValue placeholder="Choose care type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="144G">24-Hour Assisted Living (144G)</SelectItem>
+                        <SelectItem value="245D">Homemaker Services (245D)</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="timeframe">When are you hoping to start?</Label>
+                    <Select onValueChange={(value) => handleInputChange("timeframe", value)}>
                       <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
                         <SelectValue placeholder="Select timeframe" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="immediate">Immediately (within 1 week)</SelectItem>
-                        <SelectItem value="soon">Soon (within 1 month)</SelectItem>
-                        <SelectItem value="planning">Planning ahead (2-6 months)</SelectItem>
-                        <SelectItem value="future">Future planning (6+ months)</SelectItem>
+                        <SelectItem value="soon">Within 1 month</SelectItem>
+                        <SelectItem value="planning">2–6 months</SelectItem>
+                        <SelectItem value="future">6+ months</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="preferredContact">How should we contact you?</Label>
+                    <Select onValueChange={(value) => handleInputChange("preferredContact", value)}>
+                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                        <SelectValue placeholder="Email or phone" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="email">Email</SelectItem>
+                        <SelectItem value="phone">Phone</SelectItem>
+                        <SelectItem value="either">Either is fine</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

@@ -1,18 +1,16 @@
-# Welcome to your Lovable project
+# Welcome to your Gohen project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/9dec9692-31ac-447a-bf47-cc2787f69372
+Project scaffolded by Lovable (now customized as Gohen branding).
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use your preferred flow**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9dec9692-31ac-447a-bf47-cc2787f69372) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+You can continue editing locally in your IDE.
 
 **Use your preferred IDE**
 
@@ -61,13 +59,12 @@ This project is built with:
 - Tailwind CSS
 
 ## How can I deploy this project?
+Use Netlify or your preferred platform.
 
-Simply open [Lovable](https://lovable.dev/projects/9dec9692-31ac-447a-bf47-cc2787f69372) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain?
 
 Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Read more here: [Netlify Custom Domains](https://docs.netlify.com/domains-https/custom-domains/)

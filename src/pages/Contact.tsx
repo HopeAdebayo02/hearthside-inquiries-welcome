@@ -30,14 +30,6 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-foreground mb-1">Phone</h3>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                     <a 
-                      href="tel:651-500-0971" 
-                      className="text-primary hover:text-primary/80 transition-colors text-lg font-medium"
-                      aria-label="Call us at 651-500-0971"
-                    >
-                      651-500-0971
-                    </a>
-                    <span className="hidden sm:inline text-muted-foreground">•</span>
-                    <a 
                       href="tel:651-210-5364" 
                       className="text-primary hover:text-primary/80 transition-colors text-lg font-medium"
                       aria-label="Call us at 651-210-5364"

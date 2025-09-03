@@ -123,3 +123,20 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Improve global link contrast and focus */
+a {
+  text-underline-offset: 3px;
+}
+a:focus-visible {
+  outline: 2px solid hsl(214 84% 56%);
+  outline-offset: 2px;
+}
+
+/* Solid header variant for readability over photography */
+.header-solid {
+  background-color: rgba(17, 24, 39, 0.9);
+  color: white;
+}
+.header-solid a { color: #e5e7eb; }
+.header-solid a:hover { color: #ffffff; }

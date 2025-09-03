@@ -60,8 +60,7 @@ const ServiceTypesSection = () => {
             Choose Your Care Option
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            We offer two specialized care options to meet your unique needs. 
-            Select the option that best fits your situation to learn more.
+            Select the option that best fits your situation. Learn more or contact us for guidance.
           </p>
         </div>
 
@@ -99,15 +98,25 @@ const ServiceTypesSection = () => {
                   </ul>
                 </div>
 
-                <Button 
-                  onClick={() => handleServiceInquiry(service.code, service.title)}
-                  variant="hero"
-                  size="lg"
-                  className="w-full font-semibold text-lg min-h-[52px]"
-                  aria-label={`Learn more about ${service.title}`}
-                >
-                  Learn More About {service.title}
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button 
+                    onClick={() => handleServiceInquiry(service.code, service.title)}
+                    variant="hero"
+                    size="lg"
+                    className="w-full font-semibold text-lg min-h-[52px]"
+                    aria-label={`Learn more about ${service.title}`}
+                  >
+                    Learn More
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="w-full font-semibold text-lg min-h-[52px]"
+                    onClick={() => { window.location.href = '/contact#contact'; setTimeout(() => window.scrollTo(0,0), 50); }}
+                  >
+                    Contact Us
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}
@@ -120,12 +129,7 @@ const ServiceTypesSection = () => {
           <Button 
             variant="care" 
             size="lg"
-            onClick={() => {
-              const inquiryForm = document.getElementById('contact');
-              if (inquiryForm) {
-                inquiryForm.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={() => { window.location.href = '/contact#contact'; setTimeout(() => window.scrollTo(0,0), 50); }}
             className="font-semibold text-lg min-h-[52px]"
             aria-label="Contact us for a consultation to determine the best care option"
           >
