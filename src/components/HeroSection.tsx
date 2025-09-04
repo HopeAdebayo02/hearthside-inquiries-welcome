@@ -40,23 +40,14 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              variant="hero" 
-              size="lg" 
+            <Button
+              variant="hero"
+              size="lg"
               className="w-full sm:w-auto text-lg px-8 py-4 font-semibold min-h-[52px]"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               aria-label="Schedule a visit to our facility"
             >
               Schedule a Visit
-            </Button>
-            <Button 
-              variant="care" 
-              size="lg" 
-              className="w-full sm:w-auto text-lg px-8 py-4 font-semibold min-h-[52px] bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white hover:bg-white hover:text-primary transition-all"
-              onClick={() => { window.location.href = '/services'; window.scrollTo(0, 0); }}
-              aria-label="Learn more about our services"
-            >
-              Learn More
             </Button>
           </div>
           

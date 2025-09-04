@@ -98,7 +98,7 @@ const InquiryForm = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Information */}
-            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1">
+            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out hover:scale-[1.02]">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl md:text-3xl text-foreground flex items-center gap-3 mb-2">
                   <Phone className="w-7 h-7 text-primary" />
@@ -187,7 +187,7 @@ const InquiryForm = () => {
             </Card>
 
             {/* Inquiry Form */}
-            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1">
+            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out hover:scale-[1.02]">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl md:text-3xl text-foreground mb-2">
                   Send Us Your Inquiry

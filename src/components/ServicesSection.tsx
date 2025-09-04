@@ -31,7 +31,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="border-2 border-care-secondary hover:border-primary/30 hover:shadow-[var(--shadow-primary)] transition-all duration-300 hover:-translate-y-1 bg-background group"
+              className="border-2 border-care-secondary hover:border-primary/30 hover:shadow-[var(--shadow-primary)] transition-all duration-300 ease-out hover:scale-[1.02] bg-background group"
             >
               <CardHeader className="text-center pb-4">
                 <div className="flex justify-center mb-4">

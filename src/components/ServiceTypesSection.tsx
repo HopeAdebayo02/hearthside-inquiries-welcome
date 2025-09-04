@@ -46,7 +46,7 @@ const ServiceTypesSection = () => {
             Choose Your Care Option
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Select the option that best fits your situation. Learn more or contact us for guidance.
+            Select the option that best fits your situation. Contact us for guidance.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ const ServiceTypesSection = () => {
           {serviceTypes.map((service, index) => (
             <Card 
               key={index}
-              className="border-2 border-care-secondary hover:border-primary/30 hover:shadow-[var(--shadow-primary)] transition-all duration-300 hover:-translate-y-1 bg-background relative overflow-hidden group"
+              className="border-2 border-care-secondary hover:border-primary/30 hover:shadow-[var(--shadow-primary)] transition-all duration-300 ease-out hover:scale-[1.02] bg-background relative overflow-hidden group"
             >
               
               <CardHeader className="text-center pb-6 pt-8">
@@ -83,24 +83,8 @@ const ServiceTypesSection = () => {
                     ))}
                   </ul>
                 </div>
-
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    asChild
-                    variant="hero"
-                    size="lg"
-                    className="w-full font-semibold text-lg min-h-[52px]"
-                    aria-label={`Learn more about ${service.title}`}
-                  >
-                    <Link to="/contact" onClick={() => {
-                      sessionStorage.setItem('selectedServiceType', `${service.code} - ${service.title}`);
-                      window.dispatchEvent(new CustomEvent('serviceTypeSelected', {
-                        detail: { code: service.code, title: service.title }
-                      }));
-                    }}>
-                      Learn More
-                    </Link>
-                  </Button>
+                {/* Contact Us button retained per request */}
+                <div className="pt-2">
                   <Button 
                     variant="outline"
                     size="lg"

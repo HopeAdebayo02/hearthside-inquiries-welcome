@@ -17,6 +17,16 @@ All notable changes to this project will be documented in this file.
 - UI improvement: updated phone number description from "Available 24/7" to "Main office line" for clarity.
 - Enhanced contact section: added emergency contact, business hours, and location information to reduce white space and improve user experience.
 - Analytics implementation: added Google Analytics 4 with custom event tracking for form submissions, phone clicks, and email interactions.
+- Live deployment: activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 on production site.
+
+## [2025-09-04] UI polish and services CTAs
+- Smoothened button and card hover interactions (scale-based, no layout shift).
+- Removed "Learn More" buttons from Homemaker Services and 24-Hour Assisted Living cards.
+- Restored "Contact Us" button on each services card as primary CTA.
+- Updated Services intro copy to remove "Learn more" phrasing.
+- Removed global slash command feature and related keybindings.
+- Fixed blank Services page caused by missing imports after CTA changes.
+- Removed hero "Learn More" secondary CTA for clarity.
 
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.

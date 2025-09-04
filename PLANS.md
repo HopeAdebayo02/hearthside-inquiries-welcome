@@ -14,7 +14,7 @@ This document tracks current goals, decisions, and next actions for the site.
 
 ## Active Tasks
 - Improve hero/header readability over photos.
-- Ensure service “Learn More” and “Consultation” buttons navigate to Contact.
+- Keep only "Contact Us" CTA on services cards; remove "Learn More".
 - Ensure “Meet Our Team” scrolls to top of Staff page.
 
 ## Done
@@ -35,6 +35,13 @@ This document tracks current goals, decisions, and next actions for the site.
 - Improved contact form labels: changed phone description from "Available 24/7" to "Main office line".
 - Enhanced "Get in Touch" section: added emergency line, business hours, and location to reduce white space and provide comprehensive contact options.
 - Added Google Analytics 4 tracking: implemented comprehensive analytics for visitor tracking, session duration, and user interactions (form submissions, phone/email clicks).
+- Activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 and deployed to live site.
+
+### 2025-09-04
+- Smoothed hover transitions (use scale, remove translate to avoid shaking).
+- Removed slash command and global "/" key listener.
+- Removed "Learn More" buttons from services cards; retained "Contact Us" only.
+- Fixed Services page blank issue by restoring required imports for CTA banner.
 
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).
