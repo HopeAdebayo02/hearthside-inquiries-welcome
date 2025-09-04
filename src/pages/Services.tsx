@@ -22,7 +22,7 @@ const Services = () => {
               className="font-semibold text-lg min-h-[52px]"
               aria-label="Contact us for a consultation to determine the best care option"
             >
-              <Link to="/contact#contact" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
+              <Link to="/contact" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
                 Contact Us for a Consultation
               </Link>
             </Button>

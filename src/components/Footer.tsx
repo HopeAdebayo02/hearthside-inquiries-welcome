@@ -7,7 +7,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-foreground mb-4">Goshen Concept Care LLC</h3>
+            <h3
+              className="text-xl font-bold text-foreground mb-4"
+              role="img"
+              aria-label="Goshen Concept Care LLC - Professional Assisted Living Facility Logo"
+            >
+              Goshen Concept Care LLC
+            </h3>
             <p className="text-muted-foreground leading-relaxed">
               Providing compassionate, family-centered assisted living with dignity and independence.
             </p>

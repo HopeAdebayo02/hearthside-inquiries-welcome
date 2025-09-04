@@ -1,7 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button, MotionNavLink } from "@/components/ui/button";
 import { Heart, GraduationCap, Award, Stethoscope } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const staffMembers = [
   {
@@ -121,12 +120,12 @@ const StaffSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="min-h-[52px]">
-              <MotionNavLink to="/contact#contact" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
+              <MotionNavLink to="/contact" slowTransition>
                 Schedule a Meeting
               </MotionNavLink>
             </Button>
             <Button asChild variant="outline" size="lg" className="min-h-[52px]">
-              <MotionNavLink to="/services" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>
+              <MotionNavLink to="/services" slowTransition>
                 View Our Services
               </MotionNavLink>
             </Button>

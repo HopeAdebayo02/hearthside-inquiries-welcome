@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, MotionNavLink } from "@/components/ui/button";
 import { Home, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -89,9 +89,14 @@ const ServiceTypesSection = () => {
                     variant="care"
                     size="lg"
                     className="w-full font-semibold text-lg min-h-[52px]"
-                    onClick={() => { window.location.href = '/contact#contact'; setTimeout(() => window.scrollTo(0,0), 50); }}
+                    asChild
                   >
-                    Contact Us
+                    <Link
+                      to="/contact"
+                      onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}
+                    >
+                      Contact Us
+                    </Link>
                   </Button>
                 </div>
               </CardContent>
@@ -107,9 +112,9 @@ const ServiceTypesSection = () => {
               We proudly accept CADI, EW, BI waivers, and Private Pay.
             </p>
             <Button asChild variant="outline" size="lg">
-              <Link to="/contact">
+              <MotionNavLink to="/contact" slowTransition>
                 Ask About Eligibility
-              </Link>
+              </MotionNavLink>
             </Button>
           </div>
         </div>

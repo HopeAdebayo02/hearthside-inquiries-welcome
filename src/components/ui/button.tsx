@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-400 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 will-change-transform",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 will-change-transform",
   {
     variants: {
       variant: {
@@ -94,13 +94,15 @@ MotionLink.displayName = "MotionLink"
 // MotionNavLink component for React Router Links
 const MotionNavLink = React.forwardRef<
   HTMLAnchorElement,
-  React.ComponentProps<typeof Link>
->(({ className, ...props }, ref) => {
+  React.ComponentProps<typeof Link> & { slowTransition?: boolean }
+>(({ className, slowTransition = false, ...props }, ref) => {
+  const transitionDuration = slowTransition ? 0.6 : 0.2;
+
   return (
     <motion.div
       whileHover={{ scale: 1.05, y: -2 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ duration: 0.2, ease: "easeOut" }}
+      transition={{ duration: transitionDuration, ease: "easeOut" }}
     >
       <Link
         className={className}

@@ -9,9 +9,19 @@ const HeroSection = () => {
   useEffect(() => {
     const candidate = "/gohen-uploads/house-hero.jpg";
     const img = new Image();
-    img.onload = () => setBgUrl(candidate);
-    img.onerror = () => setBgUrl(fallbackHero);
+
+    const handleLoad = () => setBgUrl(candidate);
+    const handleError = () => setBgUrl(fallbackHero);
+
+    img.onload = handleLoad;
+    img.onerror = handleError;
     img.src = candidate;
+
+    // Cleanup function to prevent memory leaks
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
   }, []);
 
   return (

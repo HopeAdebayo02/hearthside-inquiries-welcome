@@ -61,9 +61,9 @@ const Home = () => {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="min-h-[52px]"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >

@@ -1,7 +1,6 @@
 import { Button, MotionNavLink } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Users, Award, Clock } from "lucide-react";
-import { Link } from "react-router-dom";
 const stats = [{
   icon: Users,
   number: "15+",
@@ -140,10 +139,10 @@ const AboutSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="min-h-[52px]">
-              <MotionNavLink to="/contact">Schedule a Visit</MotionNavLink>
+              <MotionNavLink to="/contact" slowTransition>Schedule a Visit</MotionNavLink>
             </Button>
             <Button asChild variant="outline" size="lg" className="min-h-[52px]">
-              <MotionNavLink to="/services" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>View Our Services</MotionNavLink>
+              <MotionNavLink to="/services" slowTransition onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>View Our Services</MotionNavLink>
             </Button>
           </div>
         </div>
