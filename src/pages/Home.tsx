@@ -52,7 +52,11 @@ const Home = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="min-h-[52px]">
-                <Link to="/about" className="flex items-center gap-2">
+                <Link
+                  to="/about"
+                  className="flex items-center gap-2"
+                  onClick={() => setTimeout(() => window.scrollTo(0, 0), 50)}
+                >
                   Learn More About Us
                   <ArrowRight className="w-4 h-4" />
                 </Link>

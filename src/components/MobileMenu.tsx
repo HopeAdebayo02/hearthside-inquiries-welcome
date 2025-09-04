@@ -47,7 +47,7 @@ const MobileMenu = () => {
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`text-left py-3 px-4 rounded-lg text-foreground hover:bg-care-accent hover:text-primary transition-colors text-lg font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                className={`text-left py-3 px-4 rounded-lg text-foreground hover:bg-care-accent hover:text-primary transition-colors duration-300 ease-out text-lg font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                   location.pathname === item.path ? 'text-primary bg-care-accent' : ''
                 }`}
                 role="menuitem"

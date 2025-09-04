@@ -31,7 +31,7 @@ const Contact = () => {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                     <a 
                       href="tel:651-210-5364" 
-                      className="text-primary hover:text-primary/80 transition-colors text-lg font-medium"
+                      className="text-primary hover:text-primary/80 transition-colors duration-300 ease-out text-lg font-medium"
                       aria-label="Call us at 651-210-5364"
                     >
                       651-210-5364

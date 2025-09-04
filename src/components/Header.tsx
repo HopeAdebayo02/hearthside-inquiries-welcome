@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background backdrop-blur-md z-50 border-b-2 border-care-secondary shadow-[var(--shadow-card)]">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+        <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300 ease-out">
           <img 
             src="/gohen-uploads/c6ced647-d0e0-4204-86eb-ad15242f43c9.png" 
             alt="Goshen Concept Care LLC - Professional Assisted Living Facility Logo" 
@@ -35,7 +35,7 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-6">
           <Link 
             to="/about" 
-            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/about' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to About page"
@@ -45,7 +45,7 @@ const Header = () => {
           </Link>
           <Link 
             to="/staff" 
-            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/staff' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to Staff page"
@@ -55,7 +55,7 @@ const Header = () => {
           </Link>
           <Link 
             to="/services" 
-            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/services' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to Services page"
@@ -65,7 +65,7 @@ const Header = () => {
           </Link>
           <Link 
             to="/contact" 
-            className={`text-foreground hover:text-primary transition-colors font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/contact' ? 'text-primary bg-care-accent' : ''
             }`}
             aria-label="Go to Contact page"

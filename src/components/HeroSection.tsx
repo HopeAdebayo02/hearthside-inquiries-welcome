@@ -53,15 +53,15 @@ const HeroSection = () => {
           
           {/* Trust Indicators */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30">
+            <div className="flex items-center justify-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30 hover:bg-white/30 transition-all duration-300 ease-out">
               <Shield className="w-6 h-6 text-white" />
               <span className="text-white font-medium">Licensed & Certified</span>
             </div>
-            <div className="flex items-center justify-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30">
+            <div className="flex items-center justify-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30 hover:bg-white/30 transition-all duration-300 ease-out">
               <Users className="w-6 h-6 text-white" />
               <span className="text-white font-medium">24/7 Care Team</span>
             </div>
-            <div className="flex items-center justify-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30">
+            <div className="flex items-center justify-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30 hover:bg-white/30 transition-all duration-300 ease-out">
               <Heart className="w-6 h-6 text-white" />
               <span className="text-white font-medium">Family Focused</span>
             </div>

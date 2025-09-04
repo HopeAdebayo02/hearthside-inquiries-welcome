@@ -42,6 +42,10 @@ This document tracks current goals, decisions, and next actions for the site.
 - Removed slash command and global "/" key listener.
 - Removed "Learn More" buttons from services cards; retained "Contact Us" only.
 - Fixed Services page blank issue by restoring required imports for CTA banner.
+- Enhanced ALL button transitions: increased duration to 400ms, reduced scale effects (1.015x vs 1.02x).
+- Standardized smooth transitions across entire website: buttons, links, cards, form elements.
+- Fixed Home page "Learn More About Us" navigation to scroll to top of About page.
+- Applied consistent 300-400ms ease-out transitions to all interactive elements.
 
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).

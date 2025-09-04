@@ -30,7 +30,7 @@ const Footer = () => {
               <div className="space-y-1">
                 <a 
                   href="tel:651-210-5364" 
-                  className="font-medium text-foreground hover:text-primary transition-colors block"
+                  className="font-medium text-foreground hover:text-primary transition-colors duration-300 ease-out block"
                   aria-label="Call us at 651-210-5364"
                 >
                   651-210-5364
@@ -40,7 +40,7 @@ const Footer = () => {
               <div>
                 <a 
                   href="mailto:Hope.adebayo02@gmail.com" 
-                  className="font-medium text-foreground hover:text-primary transition-colors"
+                  className="font-medium text-foreground hover:text-primary transition-colors duration-300 ease-out"
                   aria-label="Email us at Hope.adebayo02@gmail.com"
                 >
                   Hope.adebayo02@gmail.com
@@ -57,7 +57,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/about"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors duration-300 ease-out"
                   aria-label="Go to About page"
                   onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/staff"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors duration-300 ease-out"
                   aria-label="Go to Staff page"
                   onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >
@@ -77,7 +77,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/services"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors duration-300 ease-out"
                   aria-label="Go to Services page"
                   onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >
@@ -87,7 +87,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/contact"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors duration-300 ease-out"
                   aria-label="Go to Contact page"
                   onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
                 >

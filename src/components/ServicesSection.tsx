@@ -35,8 +35,8 @@ const ServicesSection = () => {
             >
               <CardHeader className="text-center pb-4">
                 <div className="flex justify-center mb-4">
-                  <div className="flex items-center justify-center w-16 h-16 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors">
-                    <service.icon className={`w-8 h-8 ${service.color} transition-colors`} />
+                  <div className="flex items-center justify-center w-16 h-16 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors duration-300 ease-out">
+                    <service.icon className={`w-8 h-8 ${service.color} transition-colors duration-300 ease-out`} />
                   </div>
                 </div>
                 <CardTitle className="text-lg md:text-xl text-foreground font-bold leading-tight">

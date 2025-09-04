@@ -27,6 +27,10 @@ All notable changes to this project will be documented in this file.
 - Removed global slash command feature and related keybindings.
 - Fixed blank Services page caused by missing imports after CTA changes.
 - Removed hero "Learn More" secondary CTA for clarity.
+- Enhanced all button transitions: increased duration to 400ms, reduced scale effects for ultra-smooth interactions.
+- Standardized transitions across all interactive elements (buttons, links, cards) for consistent user experience.
+- Fixed Home page "Learn More About Us" button to scroll to top of About page.
+- Applied smooth transitions to all navigation links, footer links, contact buttons, and form elements.
 
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.

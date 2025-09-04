@@ -64,7 +64,7 @@ const AboutSection = () => {
           {stats.map((stat, index) => (
             <Card 
               key={index} 
-              className="text-center border-2 border-care-secondary bg-background hover:shadow-[var(--shadow-primary)] hover:border-primary/20 transition-all duration-300 p-6"
+              className="text-center border-2 border-care-secondary bg-background hover:shadow-[var(--shadow-primary)] hover:border-primary/20 transition-all duration-300 ease-out p-6"
             >
               <CardHeader className="pb-4">
                 <div className="flex justify-center mb-4">

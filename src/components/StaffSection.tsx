@@ -66,7 +66,7 @@ const StaffSection = () => {
                 >
                   <CardHeader className="pb-6">
                     <div className="flex items-start space-x-4">
-                      <div className="flex items-center justify-center w-16 h-16 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors flex-shrink-0">
+                      <div className="flex items-center justify-center w-16 h-16 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors duration-300 ease-out flex-shrink-0">
                         <member.icon className="w-8 h-8 text-primary" />
                       </div>
                       <div className="flex-1 min-w-0">

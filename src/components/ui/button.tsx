@@ -5,21 +5,21 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 will-change-transform",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-400 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 will-change-transform",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-button)] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-button)] hover:shadow-lg hover:scale-[1.015] active:scale-[0.985]",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-[var(--shadow-button)] hover:scale-[1.02] active:scale-[0.98]",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-[var(--shadow-button)] hover:scale-[1.015] active:scale-[0.985]",
         outline:
-          "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground shadow-[var(--shadow-card)] hover:scale-[1.02] active:scale-[0.98]",
+          "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground shadow-[var(--shadow-card)] hover:scale-[1.015] active:scale-[0.985]",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-[var(--shadow-card)] hover:scale-[1.02] active:scale-[0.98]",
-        ghost: "hover:bg-accent hover:text-accent-foreground hover:scale-[1.02] active:scale-[0.98]",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-[var(--shadow-card)] hover:scale-[1.015] active:scale-[0.985]",
+        ghost: "hover:bg-accent hover:text-accent-foreground hover:scale-[1.015] active:scale-[0.985]",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground shadow-[var(--shadow-button)] hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
-        care: "bg-care-accent text-primary border-2 border-primary/20 hover:border-primary/40 hover:bg-primary hover:text-white shadow-[var(--shadow-card)] hover:scale-[1.02] active:scale-[0.98]",
+        hero: "bg-primary text-primary-foreground shadow-[var(--shadow-button)] hover:bg-primary/90 hover:shadow-lg hover:scale-[1.015] active:scale-[0.985]",
+        care: "bg-care-accent text-primary border-2 border-primary/20 hover:border-primary/40 hover:bg-primary hover:text-white shadow-[var(--shadow-card)] hover:scale-[1.015] active:scale-[0.985]",
       },
       size: {
         default: "h-11 px-6 py-3 text-base",

@@ -59,8 +59,8 @@ const ServiceTypesSection = () => {
               
               <CardHeader className="text-center pb-6 pt-8">
                 <div className="flex justify-center mb-6">
-                  <div className="flex items-center justify-center w-20 h-20 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors">
-                    <service.icon className={`w-10 h-10 ${service.color} transition-colors`} />
+                  <div className="flex items-center justify-center w-20 h-20 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors duration-300 ease-out">
+                    <service.icon className={`w-10 h-10 ${service.color} transition-colors duration-300 ease-out`} />
                   </div>
                 </div>
                 <CardTitle className="text-2xl md:text-3xl text-foreground font-bold mb-4">
