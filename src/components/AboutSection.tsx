@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button, MotionNavLink } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Users, Award, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -140,10 +140,10 @@ const AboutSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="min-h-[52px]">
-              <Link to="/contact">Schedule a Visit</Link>
+              <MotionNavLink to="/contact">Schedule a Visit</MotionNavLink>
             </Button>
             <Button asChild variant="outline" size="lg" className="min-h-[52px]">
-              <Link to="/services" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>View Our Services</Link>
+              <MotionNavLink to="/services" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>View Our Services</MotionNavLink>
             </Button>
           </div>
         </div>

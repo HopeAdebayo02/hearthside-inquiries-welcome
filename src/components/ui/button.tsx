@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 import { cn } from "@/lib/utils"
 
@@ -44,11 +46,25 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+    const buttonClasses = cn(buttonVariants({ variant, size, className }))
+
+    if (asChild) {
+      return (
+        <Slot
+          className={buttonClasses}
+          ref={ref}
+          {...props}
+        />
+      )
+    }
+
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+      <motion.button
+        className={buttonClasses}
         ref={ref}
+        whileHover={{ scale: 1.05, y: -2 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
         {...props}
       />
     )
@@ -56,4 +72,45 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
-export { Button, buttonVariants }
+// MotionLink component for animated links
+const MotionLink = React.forwardRef<
+  HTMLAnchorElement,
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
+>(({ className, ...props }, ref) => {
+  return (
+    <motion.a
+      className={className}
+      ref={ref}
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+      {...props}
+    />
+  )
+})
+
+MotionLink.displayName = "MotionLink"
+
+// MotionNavLink component for React Router Links
+const MotionNavLink = React.forwardRef<
+  HTMLAnchorElement,
+  React.ComponentProps<typeof Link>
+>(({ className, ...props }, ref) => {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+    >
+      <Link
+        className={className}
+        ref={ref}
+        {...props}
+      />
+    </motion.div>
+  )
+})
+
+MotionNavLink.displayName = "MotionNavLink"
+
+export { Button, MotionLink, MotionNavLink, buttonVariants }

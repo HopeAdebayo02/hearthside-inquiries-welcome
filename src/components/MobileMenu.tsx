@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button, MotionNavLink } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -43,7 +43,7 @@ const MobileMenu = () => {
           
           <nav className="flex flex-col space-y-4">
             {menuItems.map((item) => (
-              <Link
+              <MotionNavLink
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
@@ -53,7 +53,7 @@ const MobileMenu = () => {
                 role="menuitem"
               >
                 {item.label}
-              </Link>
+              </MotionNavLink>
             ))}
           </nav>
           

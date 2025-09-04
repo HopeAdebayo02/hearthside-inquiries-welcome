@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button, MotionNavLink } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import {
   DropdownMenu,
@@ -33,8 +33,8 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link 
-            to="/about" 
+          <MotionNavLink
+            to="/about"
             className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/about' ? 'text-primary bg-care-accent' : ''
             }`}
@@ -42,9 +42,9 @@ const Header = () => {
             onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             About
-          </Link>
-          <Link 
-            to="/staff" 
+          </MotionNavLink>
+          <MotionNavLink
+            to="/staff"
             className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/staff' ? 'text-primary bg-care-accent' : ''
             }`}
@@ -52,9 +52,9 @@ const Header = () => {
             onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             Staff
-          </Link>
-          <Link 
-            to="/services" 
+          </MotionNavLink>
+          <MotionNavLink
+            to="/services"
             className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/services' ? 'text-primary bg-care-accent' : ''
             }`}
@@ -62,9 +62,9 @@ const Header = () => {
             onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             Services
-          </Link>
-          <Link 
-            to="/contact" 
+          </MotionNavLink>
+          <MotionNavLink
+            to="/contact"
             className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
               location.pathname === '/contact' ? 'text-primary bg-care-accent' : ''
             }`}
@@ -72,7 +72,7 @@ const Header = () => {
             onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
           >
             Contact
-          </Link>
+          </MotionNavLink>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button 
