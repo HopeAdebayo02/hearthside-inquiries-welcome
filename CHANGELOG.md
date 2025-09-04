@@ -19,19 +19,6 @@ All notable changes to this project will be documented in this file.
 - Analytics implementation: added Google Analytics 4 with custom event tracking for form submissions, phone clicks, and email interactions.
 - Live deployment: activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 on production site.
 
-## [2025-09-04] UI polish and services CTAs
-- Smoothened button and card hover interactions (scale-based, no layout shift).
-- Removed "Learn More" buttons from Homemaker Services and 24-Hour Assisted Living cards.
-- Restored "Contact Us" button on each services card as primary CTA.
-- Updated Services intro copy to remove "Learn more" phrasing.
-- Removed global slash command feature and related keybindings.
-- Fixed blank Services page caused by missing imports after CTA changes.
-- Removed hero "Learn More" secondary CTA for clarity.
-- Enhanced all button transitions: increased duration to 400ms, reduced scale effects for ultra-smooth interactions.
-- Standardized transitions across all interactive elements (buttons, links, cards) for consistent user experience.
-- Fixed Home page "Learn More About Us" button to scroll to top of About page.
-- Applied smooth transitions to all navigation links, footer links, contact buttons, and form elements.
-
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.
 - Switch hero to new house photo with fallback.
