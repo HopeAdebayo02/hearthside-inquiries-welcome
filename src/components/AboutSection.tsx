@@ -143,7 +143,7 @@ const AboutSection = () => {
               <Link to="/contact">Schedule a Visit</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="min-h-[52px]">
-              <Link to="/services">View Our Services</Link>
+              <Link to="/services" onClick={() => setTimeout(() => window.scrollTo(0,0), 50)}>View Our Services</Link>
             </Button>
           </div>
         </div>
