@@ -206,7 +206,7 @@ const InquiryForm = () => {
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
                         required
-                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base"
+                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation"
                         aria-describedby="name-description"
                       />
                     </div>
@@ -218,7 +218,7 @@ const InquiryForm = () => {
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                         required
-                        className="border-warm-secondary/30 focus:border-warm-primary"
+                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation"
                       />
                     </div>
                   </div>
@@ -228,16 +228,18 @@ const InquiryForm = () => {
                       <Label htmlFor="phone">Phone *</Label>
                       <Input
                         id="phone"
+                        type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
                         required
-                        className="border-warm-secondary/30 focus:border-warm-primary"
+                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation"
+                        inputMode="tel"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="relationship">Who are you to the person needing care?</Label>
                       <Select onValueChange={(value) => handleInputChange("relationship", value)}>
-                        <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                        <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
                           <SelectValue placeholder="Select relationship" />
                         </SelectTrigger>
                         <SelectContent>
@@ -255,7 +257,7 @@ const InquiryForm = () => {
                   <div className="space-y-2">
                     <Label htmlFor="careType">What kind of support are you looking for?</Label>
                     <Select onValueChange={(value) => handleInputChange("careType", value)}>
-                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
                         <SelectValue placeholder="Choose care type" />
                       </SelectTrigger>
                       <SelectContent>
@@ -268,7 +270,7 @@ const InquiryForm = () => {
                   <div className="space-y-2">
                     <Label htmlFor="timeframe">When are you hoping to start?</Label>
                     <Select onValueChange={(value) => handleInputChange("timeframe", value)}>
-                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
                         <SelectValue placeholder="Select timeframe" />
                       </SelectTrigger>
                       <SelectContent>
@@ -283,7 +285,7 @@ const InquiryForm = () => {
                   <div className="space-y-2">
                     <Label htmlFor="preferredContact">How should we contact you?</Label>
                     <Select onValueChange={(value) => handleInputChange("preferredContact", value)}>
-                      <SelectTrigger className="border-warm-secondary/30 focus:border-warm-primary">
+                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
                         <SelectValue placeholder="Email or phone" />
                       </SelectTrigger>
                       <SelectContent>
@@ -302,7 +304,7 @@ const InquiryForm = () => {
                       onChange={(e) => handleInputChange("message", e.target.value)}
                       rows={4}
                       placeholder="Please share any specific care needs, medical conditions, or questions you have..."
-                      className="border-warm-secondary/30 focus:border-warm-primary"
+                      className="min-h-[120px] border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation resize-none"
                     />
                   </div>
                   
