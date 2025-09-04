@@ -85,8 +85,8 @@ const ServiceTypesSection = () => {
                 </div>
                 {/* Contact Us button retained per request */}
                 <div className="pt-2">
-                  <Button 
-                    variant="outline"
+                  <Button
+                    variant="care"
                     size="lg"
                     className="w-full font-semibold text-lg min-h-[52px]"
                     onClick={() => { window.location.href = '/contact#contact'; setTimeout(() => window.scrollTo(0,0), 50); }}
