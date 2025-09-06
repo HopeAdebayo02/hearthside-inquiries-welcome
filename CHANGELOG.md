@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file.
 - Live deployment: activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 on production site.
 - UI Improvement: Adjusted toast notification delay to 5 seconds for a better user experience.
 - Code Cleanup: Removed the redundant `Index.tsx` page from the `pages` directory.
+- UI Improvement: Added a "Licensed" badge to the site header for increased visibility.
 
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.

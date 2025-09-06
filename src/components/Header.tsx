@@ -26,7 +26,7 @@ const Header = () => {
               GOSHEN CONCEPT CARE LLC
             </h1>
             <p className="text-sm md:text-base text-primary font-semibold">
-              Assisted Living Facility
+              Assisted Living Facility <span className="ml-2 px-2 py-1 bg-primary text-primary-foreground text-xs rounded-md">Licensed</span>
             </p>
           </div>
         </Link>

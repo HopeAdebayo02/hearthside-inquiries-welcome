@@ -38,6 +38,7 @@ This document tracks current goals, decisions, and next actions for the site.
 - Activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 and deployed to live site.
 - Fixed toast notification delay to 5 seconds for better user experience.
 - Removed redundant Index.tsx page from the `pages` directory.
+- Added "Licensed" badge to the site header for increased visibility.
 
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).
