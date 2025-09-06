@@ -36,6 +36,8 @@ This document tracks current goals, decisions, and next actions for the site.
 - Enhanced "Get in Touch" section: added emergency line, business hours, and location to reduce white space and provide comprehensive contact options.
 - Added Google Analytics 4 tracking: implemented comprehensive analytics for visitor tracking, session duration, and user interactions (form submissions, phone/email clicks).
 - Activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 and deployed to live site.
+- Fixed toast notification delay to 5 seconds for better user experience.
+- Removed redundant Index.tsx page from the `pages` directory.
 
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).

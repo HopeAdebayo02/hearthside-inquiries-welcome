@@ -18,6 +18,8 @@ All notable changes to this project will be documented in this file.
 - Enhanced contact section: added emergency contact, business hours, and location information to reduce white space and improve user experience.
 - Analytics implementation: added Google Analytics 4 with custom event tracking for form submissions, phone clicks, and email interactions.
 - Live deployment: activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 on production site.
+- UI Improvement: Adjusted toast notification delay to 5 seconds for a better user experience.
+- Code Cleanup: Removed the redundant `Index.tsx` page from the `pages` directory.
 
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.
