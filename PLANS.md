@@ -39,6 +39,8 @@ This document tracks current goals, decisions, and next actions for the site.
 - Fixed toast notification delay to 5 seconds for better user experience.
 - Removed redundant Index.tsx page from the `pages` directory.
 - Added "Licensed" badge to the site header for increased visibility.
+- Repositioned "Licensed" to precede "Assisted Living Facility" in the site header and ensured consistent font styling.
+- Removed 'credentials' and 'specialties' from staff member descriptions in `StaffSection.tsx` for a more streamlined and human-centered approach.
 
 ## Next Up
 - Gather real copy for each service detail page (optional follow-up).

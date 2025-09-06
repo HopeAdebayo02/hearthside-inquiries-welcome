@@ -20,9 +20,12 @@ All notable changes to this project will be documented in this file.
 - Live deployment: activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 on production site.
 - UI Improvement: Adjusted toast notification delay to 5 seconds for a better user experience.
 - Code Cleanup: Removed the redundant `Index.tsx` page from the `pages` directory.
-- UI Improvement: Added a "Licensed" badge to the site header for increased visibility.
-
-## [2025-09-02] Services cleanup and accessibility
+     23|- UI Improvement: Added a "Licensed" badge to the site header for increased visibility.
+    24|- UI Improvement: Repositioned "Licensed" to precede "Assisted Living Facility" in the site header and ensured consistent font styling.
+    25|- Content Update: Rewrote staff bios and specialties for a more personal, warm, and family-oriented tone.
+    26|- Content Update: Removed 'credentials' and 'specialties' from staff member descriptions in `StaffSection.tsx` for a more streamlined and human-centered approach.
+    27|
+    28|## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.
 - Switch hero to new house photo with fallback.
 - Remove second phone number; keep 651-210-5364.

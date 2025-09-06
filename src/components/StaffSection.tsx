@@ -6,42 +6,32 @@ const staffMembers = [
   {
     name: "Emmanuel Adebayo",
     title: "Co-Founder & Owner",
-    credentials: "15+ Years Experience in Assisted Living",
-    bio: "Emmanuel co-founded Goshen Concept Care with a vision to provide family-centered assisted living that honors each resident's dignity and independence.",
-    icon: Heart,
-    specialties: ["Leadership", "Operations Management", "Family Care"]
+    bio: "Emmanuel poured his heart into co-founding Goshen Concept Care, driven by a deep personal vision: to create a place where every resident feels like family, their dignity honored, and their independence cherished. His commitment shapes the warm, supportive environment we're known for.",
+    icon: Heart
   },
   {
     name: "Olu Adebayo",
     title: "Co-Founder & Owner",
-    credentials: "15+ Years Experience in Assisted Living",
-    bio: "Olu co-founded Goshen Concept Care alongside Emmanuel, bringing extensive experience and a passion for quality senior care to the community.",
-    icon: Heart,
-    specialties: ["Business Development", "Community Relations", "Quality Assurance"]
+    bio: "Alongside Emmanuel, Olu envisioned a community where quality senior care is delivered with genuine warmth. Her extensive experience and unwavering passion ensure that our residents not only receive excellent care but also truly feel at home and connected.",
+    icon: Heart
   },
   {
     name: "Samlina Cawray",
     title: "Administrator",
-    credentials: "Extensive Minnesota Assisted Living Experience",
-    bio: "Samlina has worked with countless assisted living facilities across Minnesota and brings amazing expertise to her administrative role at Goshen Concept Care.",
-    icon: Award,
-    specialties: ["Administration", "Regulatory Compliance", "Facility Management"]
+    bio: "Samlina is the nurturing heart of our administration. With vast experience from assisted living facilities across Minnesota, she brings a gentle yet expert touch to Goshen Concept Care, ensuring every aspect of our facility operates with kindness and efficiency.",
+    icon: Award
   },
   {
   name: "Faith Adebayo",
   title: "Registered Nurse",
-  credentials: "RN, Skilled in Patient Care & Clinical Support",
-  bio: "Faith is a committed nursing professional who brings strong clinical knowledge and a compassionate approach to resident care. She is experienced in patient support, medication management, and fostering a safe, supportive environment for residents.",
-  icon: Stethoscope,
-  specialties: ["Patient Care", "Medication Management", "Health Monitoring"]
+  bio: "Faith is our devoted nursing professional, whose strong clinical knowledge is matched only by her compassionate heart. She cares for each resident with a gentle hand, expertly managing medications, monitoring health, and fostering a safe, loving environment where everyone feels truly supported.",
+  icon: Stethoscope
 },
 {
   name: "Hope Adebayo",
   title: "Resident Services Coordinator",
-  credentials: "BBA, University of St. Thomas",
-  bio: "Hope leverages a background in business and healthcare operations to coordinate resident services with excellence. He is passionate about creating meaningful daily experiences, enhancing quality of life, and maintaining open, supportive communication with families.",
-  icon: GraduationCap,
-  specialties: ["Resident Services", "Activity Coordination", "Family Communication"]
+  bio: "Hope is dedicated to crafting joyful daily experiences for our residents. With a background in business and a passion for people, he lovingly coordinates services, ensuring each activity enhances quality of life and that families always feel connected and heard through open, supportive communication.",
+  icon: GraduationCap
 }
 
 ];
@@ -75,9 +65,6 @@ const StaffSection = () => {
                         <CardDescription className="text-primary font-bold mb-2 text-base">
                           {member.title}
                         </CardDescription>
-                        <p className="text-sm text-muted-foreground font-medium">
-                          {member.credentials}
-                        </p>
                       </div>
                     </div>
                   </CardHeader>
@@ -85,16 +72,6 @@ const StaffSection = () => {
                     <p className="text-muted-foreground mb-6 leading-relaxed text-base">
                       {member.bio}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {member.specialties.map((specialty, idx) => (
-                        <span 
-                          key={idx}
-                          className="px-3 py-2 bg-care-accent text-primary text-sm rounded-lg font-medium border border-primary/10"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
                   </CardContent>
                 </Card>
               </div>
