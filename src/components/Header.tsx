@@ -18,12 +18,12 @@ const Header = () => {
         <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300 ease-out">
           <img 
             src="/gohen-uploads/c6ced647-d0e0-4204-86eb-ad15242f43c9.png" 
-            alt="Goshen Concept Care LLC - Professional Assisted Living Facility Logo" 
+            alt="Goshen Concept Care - Professional Assisted Living Facility Logo" 
             className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-lg shadow-sm"
           />
           <div>
             <h1 className="text-lg md:text-2xl font-bold text-foreground tracking-wide leading-tight">
-              GOSHEN CONCEPT CARE LLC
+              GOSHEN CONCEPT CARE
             </h1>
             <p className="text-sm md:text-base text-primary font-semibold">
               Licensed Assisted Living Facility

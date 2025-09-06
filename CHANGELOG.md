@@ -15,17 +15,16 @@ All notable changes to this project will be documented in this file.
 - Performance optimization: removed unused dependencies (@tanstack/react-query, resend, zod) reducing bundle size.
 - Code cleanup: removed redundant imports and simplified App.tsx structure.
 - UI improvement: updated phone number description from "Available 24/7" to "Main office line" for clarity.
-- Enhanced contact section: added emergency contact, business hours, and location information to reduce white space and improve user experience.
+- Enhanced contact section: added emergency contact, business hours, and location information to reduce white space and provide comprehensive contact options.
 - Analytics implementation: added Google Analytics 4 with custom event tracking for form submissions, phone clicks, and email interactions.
 - Live deployment: activated Google Analytics 4 with measurement ID G-N6F3BZ71J4 on production site.
 - UI Improvement: Adjusted toast notification delay to 5 seconds for a better user experience.
 - Code Cleanup: Removed the redundant `Index.tsx` page from the `pages` directory.
-     23|- UI Improvement: Added a "Licensed" badge to the site header for increased visibility.
-    24|- UI Improvement: Repositioned "Licensed" to precede "Assisted Living Facility" in the site header and ensured consistent font styling.
-    25|- Content Update: Rewrote staff bios and specialties for a more personal, warm, and family-oriented tone.
-    26|- Content Update: Removed 'credentials' and 'specialties' from staff member descriptions in `StaffSection.tsx` for a more streamlined and human-centered approach.
-    27|
-    28|## [2025-09-02] Services cleanup and accessibility
+- UI Improvement: Repositioned "Licensed" to precede "Assisted Living Facility" in the site header and ensured consistent font styling.
+- Content Update: Rewrote staff bios and specialties for a more personal, warm, and family-oriented tone.
+- Content Update: Removed "LLC" from all non-footer instances of the company name (Header, AboutSection, Home, About pages).
+
+## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads` to `gohen-uploads` and update asset paths.
 - Switch hero to new house photo with fallback.
 - Remove second phone number; keep 651-210-5364.

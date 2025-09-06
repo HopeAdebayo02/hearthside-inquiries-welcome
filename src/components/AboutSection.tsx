@@ -48,7 +48,7 @@ const AboutSection = () => {
             Our Family Caring for Yours
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-3xl mx-auto">
-            At Goshen Concept Care LLC, we believe that assisted living should feel like 
+            At Goshen Concept Care, we believe that assisted living should feel like 
             an extension of home, not an institution. Our family-founded facility has been 
             serving the community for over 15 years, providing compassionate care that 
             honors the dignity and independence of every resident.
