@@ -39,6 +39,8 @@ All notable changes to this project will be documented in this file.
 - UI Cleanup: Removed non-functional Search and Menu buttons from header top bar, centered phone number information for cleaner, more focused header design.
 - UI Consistency: Standardized navigation menu items ("Experience Goshen", "Care & Living", "Advice & Planning") to use consistent text-lg font size and styling for visual uniformity.
 - Navigation Simplification: Completely removed dropdown menus and converted to simple navigation links (About, Services, Staff, Contact) for cleaner, more straightforward user experience.
+- Bug Fix: Fixed "Book a Tour" button functionality across all pages by implementing smart navigation that scrolls to contact section when available, or navigates to contact page when not available.
+- UX Improvement: Added automatic scroll-to-top functionality when navigating between pages, ensuring users always start at the top of each new page.
 
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads`

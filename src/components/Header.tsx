@@ -10,10 +10,11 @@ import {
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import MobileMenu from "@/components/MobileMenu";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Check if we're on the home page
@@ -128,7 +129,16 @@ const Header = () => {
                 className={`bg-primary hover:bg-primary/90 text-white font-semibold transition-all duration-300 ${
                   isScrolled ? 'text-sm px-4 py-2 h-9' : 'size-lg px-6'
                 }`}
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => {
+                  const contactElement = document.getElementById('contact');
+                  if (contactElement) {
+                    // If we're on a page with a contact section, scroll to it
+                    contactElement.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    // Otherwise, navigate to the contact page
+                    navigate('/contact');
+                  }
+                }}
               >
                 <Calendar className={`transition-all duration-300 mr-2 ${
                   isScrolled ? 'w-3 h-3' : 'w-4 h-4'

@@ -64,6 +64,8 @@ This document tracks current goals, decisions, and next actions for the site.
 - Cleaned up header top bar by removing non-functional Search and Menu buttons, centering the phone number information for a cleaner, more focused design.
 - Standardized navigation menu items ("Experience Goshen", "Care & Living", "Advice & Planning") to use consistent text-lg font size and styling for visual uniformity.
 - Completely simplified navigation by removing all dropdown menus and converting to simple links (About, Services, Staff, Contact) for a cleaner, more straightforward user experience.
+- Fixed "Book a Tour" button functionality across all pages by implementing smart navigation that scrolls to contact section if available, or navigates to contact page if not.
+- Implemented automatic scroll-to-top functionality when navigating between pages to ensure users always start at the top of each new page.
 
 ## Next Up
 - Reverted logo repositioning from Hero section back to the Header, restoring original image source and size.
