@@ -20,7 +20,7 @@ const serviceTypes = [
     color: "text-primary"
   },
   {
-    code: "144G", 
+    code: "144G",
     title: "24-Hour Assisted Living",
     description: "Comprehensive residential care with round-the-clock support in our warm, family-oriented community. Perfect for those needing more intensive daily assistance.",
     icon: Clock,
@@ -52,11 +52,11 @@ const ServiceTypesSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {serviceTypes.map((service, index) => (
-            <Card 
+            <Card
               key={index}
               className="border-2 border-care-secondary hover:border-primary/30 hover:shadow-[var(--shadow-primary)] transition-all duration-300 ease-out hover:scale-[1.02] bg-background relative overflow-hidden group"
             >
-              
+
               <CardHeader className="text-center pb-6 pt-8">
                 <div className="flex justify-center mb-6">
                   <div className="flex items-center justify-center w-20 h-20 bg-care-accent rounded-xl border-2 border-primary/10 group-hover:border-primary/20 transition-colors duration-300 ease-out">

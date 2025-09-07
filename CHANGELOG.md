@@ -23,19 +23,22 @@ All notable changes to this project will be documented in this file.
 - UI Improvement: Repositioned "Licensed" to precede "Assisted Living Facility" in the site header and ensured consistent font styling.
 - Content Update: Rewrote staff bios and specialties for a more personal, warm, and family-oriented tone.
 - Content Update: Removed "LLC" from all non-footer instances of the company name (Header, AboutSection, Home, About pages).
+- UI Improvement: Updated logo image to `Logo-removebg-preview.png` for a cleaner look with less internal white space.
+- UI Improvement: Restructured logo in header to place the image above the text, and adjusted image size and text styling to resemble 'Sunrise Senior Living' logo.
+- UI Improvement: Removed company name and licensed facility text from the header, leaving only the logo image.
+- UI Improvement: Set the logo image size to 151x85 pixels in the header.
+- UI Improvement: Restructured the logo in the header by wrapping the image within a `div` with class `header__logo` for structural consistency.
+- UI Improvement: Increased the font size and padding of navigation links and the 'Call' button for enhanced visibility.
+- UI Enhancement: Implemented professional header design inspired by Sunrise Senior Living with prominent phone number display (651-210-5364) in top bar.
+- Feature Addition: Added "Book a Tour" button with smooth scrolling functionality to contact section.
+- Navigation Enhancement: Created dropdown navigation menus for "Experience Goshen" and "Care & Living" sections with organized sub-links.
+- Design Enhancement: Maintained all original content while significantly upgrading header professionalism and user experience.
+- Layout Improvement: Added pricing and availability information in header top bar for increased visibility.
+- UI Enhancement: Increased logo size to 220px x 130px for enhanced visibility and prominence.
+- Feature Addition: Implemented scroll-based header shrinking that reduces header size, logo, and navigation elements when scrolling down, but only on the home page. All other pages display the shrunk header by default for consistent navigation experience.
+- UI Cleanup: Removed non-functional Search and Menu buttons from header top bar, centered phone number information for cleaner, more focused header design.
+- UI Consistency: Standardized navigation menu items ("Experience Goshen", "Care & Living", "Advice & Planning") to use consistent text-lg font size and styling for visual uniformity.
+- Navigation Simplification: Completely removed dropdown menus and converted to simple navigation links (About, Services, Staff, Contact) for cleaner, more straightforward user experience.
 
 ## [2025-09-02] Services cleanup and accessibility
-- Rename `lovable-uploads` to `gohen-uploads` and update asset paths.
-- Switch hero to new house photo with fallback.
-- Remove second phone number; keep 651-210-5364.
-- Center Hope Adebayo card and tidy Services grid.
-- Improve header readability and global link focus styles.
-- Remove duplicate headings/sections on Services page.
-- Ensure service buttons navigate to Contact; Meet Our Team scrolls to top.
-- Update structured data and README.
-- Deploy to Netlify production.
-
-## [2025-09-03] UI tweaks and waiver banner
-- Remove hero heart badge.
-- Delete 24/7 Care Excellence section from Staff page and incorporate copy into header paragraph.
-- Add Services waiver acceptance banner (CADI, EW, BI, Private Pay) with Contact CTA.
+- Rename `lovable-uploads`

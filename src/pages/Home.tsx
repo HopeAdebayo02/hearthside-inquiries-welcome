@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      
+
       {/* Brief About Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
@@ -18,7 +18,7 @@ const Home = () => {
               Welcome to Goshen Concept Care
             </h2>
             <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-              We provide compassionate, family-centered assisted living services with dignity and independence. 
+              We provide compassionate, family-centered assisted living services with dignity and independence.
               Our dedicated team ensures each resident receives personalized care in a warm, homelike environment.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -73,7 +73,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
+
       <InquiryForm />
     </div>
   );

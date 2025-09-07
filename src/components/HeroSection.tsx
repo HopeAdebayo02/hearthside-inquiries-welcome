@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, Shield, Users } from "lucide-react";
 import fallbackHero from "/gohen-uploads/0132b0bd-68c1-4d6b-befb-c41cbb9fd606.png";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [bgUrl, setBgUrl] = useState<string>(fallbackHero);
@@ -27,28 +28,26 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgUrl})` }}
       >
         <div className="absolute inset-0 bg-black/45"></div>
       </div>
-      
+
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Removed decorative heart badge for a cleaner hero */}
-          
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Where Family 
+            Where Family
             <span className="block text-white/90">Comes First</span>
           </h1>
-          
+
           <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
-            Experience compassionate, family-centered assisted living in a warm, 
+            Experience compassionate, family-centered assisted living in a warm,
             welcoming community designed to feel like home.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
               variant="hero"
@@ -60,7 +59,7 @@ const HeroSection = () => {
               Schedule a Visit
             </Button>
           </div>
-          
+
           {/* Trust Indicators */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="flex items-center justify-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/30 hover:bg-white/30 transition-all duration-300 ease-out">

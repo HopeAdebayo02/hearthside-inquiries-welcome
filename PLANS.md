@@ -41,10 +41,32 @@ This document tracks current goals, decisions, and next actions for the site.
 - Added "Licensed" badge to the site header for increased visibility.
 - Repositioned "Licensed" to precede "Assisted Living Facility" in the site header and ensured consistent font styling.
 - Removed "LLC" from all non-footer instances of the company name (Header, AboutSection, Home, About pages).
+- Increased logo size in the header for improved visibility.
+- Further increased logo size in the header for enhanced visibility.
+- Updated logo image to use `Logo-removebg-preview.png` for a cleaner look with less internal white space.
+- Adjusted logo size in the header based on research and new cropped image for optimal display.
+- Repositioned the entire logo block (image and text) from the site header to above the main heading in the Hero section for greater prominence.
+- Repositioned only the logo image to above the main heading in the Hero section, while keeping the logo text in the Header.
+- Reverted logo and text to original top-left position in the Header.
+- Fixed logo by updating the image source to `Logo-removebg-preview.png` for proper display.
+- Significantly increased logo size in the header for enhanced visibility.
+- Restructured logo in header to place the image above the text, and adjusted image size and text styling to resemble 'Sunrise Senior Living' logo.
+- Removed company name and licensed facility text from the header, leaving only the logo image.
+- Set the logo image size to 151x85 pixels in the header.
+- Restructured the logo in the header by wrapping the image within a `div` with class `header__logo` for structural consistency.
+- Increased the font size and padding of navigation links and the 'Call' button for enhanced visibility.
+- Implemented professional header design inspired by Sunrise Senior Living with prominent phone number display and "Book a Tour" functionality.
+- Added top bar with pricing and availability information and phone number (651-210-5364).
+- Created dropdown navigation menus for "Experience Goshen" and "Care & Living" sections.
+- Maintained all original content while enhancing header professionalism and user experience.
+- Increased logo size to 220px x 130px for enhanced visibility and prominence.
+- Implemented scroll-based header shrinking functionality that reduces header size and logo when scrolling down, but only on the home page. All other pages display the shrunk header by default for consistent navigation experience.
+- Cleaned up header top bar by removing non-functional Search and Menu buttons, centering the phone number information for a cleaner, more focused design.
+- Standardized navigation menu items ("Experience Goshen", "Care & Living", "Advice & Planning") to use consistent text-lg font size and styling for visual uniformity.
+- Completely simplified navigation by removing all dropdown menus and converting to simple links (About, Services, Staff, Contact) for a cleaner, more straightforward user experience.
 
 ## Next Up
-- Gather real copy for each service detail page (optional follow-up).
-- Add analytics and basic event tracking for CTAs (optional).
+- Reverted logo repositioning from Hero section back to the Header, restoring original image source and size.
 
 ## Updates (latest)
 - Removed decorative heart badge from hero for cleaner UI.

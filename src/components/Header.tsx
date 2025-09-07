@@ -1,103 +1,151 @@
+import { useState, useEffect } from "react";
 import { Button, MotionNavLink } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, Calendar, Search, Menu } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import MobileMenu from "@/components/MobileMenu";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
-  
-  return (
-    <header className="fixed top-0 w-full bg-background backdrop-blur-md z-50 border-b-2 border-care-secondary shadow-[var(--shadow-card)]">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300 ease-out">
-          <img 
-            src="/gohen-uploads/c6ced647-d0e0-4204-86eb-ad15242f43c9.png" 
-            alt="Goshen Concept Care - Professional Assisted Living Facility Logo" 
-            className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-lg shadow-sm"
-          />
-          <div>
-            <h1 className="text-lg md:text-2xl font-bold text-foreground tracking-wide leading-tight">
-              GOSHEN CONCEPT CARE
-            </h1>
-            <p className="text-sm md:text-base text-primary font-semibold">
-              Licensed Assisted Living Facility
-            </p>
-          </div>
-        </Link>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <MotionNavLink
-            to="/about"
-            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-              location.pathname === '/about' ? 'text-primary bg-care-accent' : ''
-            }`}
-            aria-label="Go to About page"
-            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
-          >
-            About
-          </MotionNavLink>
-          <MotionNavLink
-            to="/staff"
-            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-              location.pathname === '/staff' ? 'text-primary bg-care-accent' : ''
-            }`}
-            aria-label="Go to Staff page"
-            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
-          >
-            Staff
-          </MotionNavLink>
-          <MotionNavLink
-            to="/services"
-            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-              location.pathname === '/services' ? 'text-primary bg-care-accent' : ''
-            }`}
-            aria-label="Go to Services page"
-            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
-          >
-            Services
-          </MotionNavLink>
-          <MotionNavLink
-            to="/contact"
-            className={`text-foreground hover:text-primary transition-colors duration-300 ease-out font-medium px-3 py-2 rounded-lg hover:bg-care-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-              location.pathname === '/contact' ? 'text-primary bg-care-accent' : ''
-            }`}
-            aria-label="Go to Contact page"
-            onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
-          >
-            Contact
-          </MotionNavLink>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button 
-                variant="hero" 
-                size="touch" 
-                className="flex items-center gap-2 font-semibold"
-                aria-label="Call us"
-              >
-                <Phone className="w-4 h-4" />
-                <span className="hidden lg:inline">Call</span>
-                <span className="lg:hidden">Call</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => window.open('tel:651-210-5364')}>
-                651-210-5364
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </nav>
+  const [isScrolled, setIsScrolled] = useState(false);
 
-        {/* Mobile Menu */}
-        <MobileMenu />
+  // Check if we're on the home page
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    // Only add scroll listener on home page
+    if (!isHomePage) {
+      setIsScrolled(true); // Always shrunk on non-home pages
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHomePage]);
+
+  return (
+    <header className={`fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-200 shadow-lg transition-all duration-300 ${
+      isScrolled ? 'shadow-xl' : ''
+    }`}>
+      {/* Top Bar */}
+      <div className={`bg-primary text-white transition-all duration-300 ${
+        isScrolled ? 'py-1 opacity-90' : 'py-2'
+      }`}>
+        <div className="container mx-auto px-4 flex justify-center items-center text-sm">
+          <span className="font-medium">Call for Pricing & Availability: 651-210-5364</span>
+        </div>
+      </div>
+
+      {/* Main Header */}
+      <div className={`container mx-auto px-4 transition-all duration-300 ${
+        isScrolled ? 'py-2' : 'py-4'
+      }`}>
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link to="/" className="flex items-center hover:opacity-80 transition-opacity duration-300">
+              <img
+                src="/gohen-uploads/Logo-removebg-preview.png"
+                alt="Goshen Concept Care - Professional Assisted Living Facility Logo"
+                className={`object-contain transition-all duration-300 ${
+                  isScrolled ? 'w-[160px] h-[95px]' : 'w-[220px] h-[130px]'
+                }`}
+              />
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-8">
+            <MotionNavLink
+              to="/about"
+              className="font-semibold hover:text-primary transition-all duration-300 px-4 py-2 text-lg"
+            >
+              About
+            </MotionNavLink>
+
+            <MotionNavLink
+              to="/services"
+              className="font-semibold hover:text-primary transition-all duration-300 px-4 py-2 text-lg"
+            >
+              Services
+            </MotionNavLink>
+
+            <MotionNavLink
+              to="/staff"
+              className="font-semibold hover:text-primary transition-all duration-300 px-4 py-2 text-lg"
+            >
+              Staff
+            </MotionNavLink>
+
+            <MotionNavLink
+              to="/contact"
+              className="font-semibold hover:text-primary transition-all duration-300 px-4 py-2 text-lg"
+            >
+              Contact
+            </MotionNavLink>
+
+            {/* Action Buttons */}
+            <div className="flex items-center space-x-4">
+              {/* Phone Button */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className={`flex items-center gap-2 font-semibold border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 ${
+                      isScrolled ? 'text-sm px-3 py-2 h-9' : 'size-lg'
+                    }`}
+                  >
+                    <Phone className={`transition-all duration-300 ${
+                      isScrolled ? 'w-3 h-3' : 'w-4 h-4'
+                    }`} />
+                    Call
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuLabel>Call Us</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => window.open('tel:651-210-5364')}>
+                    <Phone className="w-4 h-4 mr-2" />
+                    651-210-5364
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              {/* Book Tour Button */}
+              <Button
+                className={`bg-primary hover:bg-primary/90 text-white font-semibold transition-all duration-300 ${
+                  isScrolled ? 'text-sm px-4 py-2 h-9' : 'size-lg px-6'
+                }`}
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Calendar className={`transition-all duration-300 mr-2 ${
+                  isScrolled ? 'w-3 h-3' : 'w-4 h-4'
+                }`} />
+                Book a Tour
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className="lg:hidden">
+            <MobileMenu />
+          </div>
+        </div>
       </div>
     </header>
   );
 };
+
 export default Header;

@@ -96,7 +96,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      
+
       <InquiryForm />
     </div>
   );
