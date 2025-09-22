@@ -42,5 +42,11 @@ All notable changes to this project will be documented in this file.
 - Bug Fix: Fixed "Book a Tour" button functionality across all pages by implementing smart navigation that scrolls to contact section when available, or navigates to contact page when not available.
 - UX Improvement: Added automatic scroll-to-top functionality when navigating between pages, ensuring users always start at the top of each new page.
 
+### Mobile UX improvements
+- Header: Smaller logo and top bar text on small screens to prevent crowding.
+- Form: Rounded corners, consistent padding, and larger tap targets for inputs, selects, and textarea.
+- Cards: Lighter borders with larger radii to avoid harsh edges on phones.
+- Safe area: Added CSS helpers to respect iOS/Android safe areas and prevent content under notch/home indicator.
+
 ## [2025-09-02] Services cleanup and accessibility
 - Rename `lovable-uploads`

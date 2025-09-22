@@ -98,7 +98,7 @@ const InquiryForm = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Contact Information */}
-            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out hover:scale-[1.02]">
+            <Card className="bg-background/95 backdrop-blur-sm border border-care-secondary shadow-xl hover:shadow-2xl transition-all duration-300 ease-out hover:scale-[1.01] rounded-2xl">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl md:text-3xl text-foreground flex items-center gap-3 mb-2">
                   <Phone className="w-7 h-7 text-primary" />
@@ -187,7 +187,7 @@ const InquiryForm = () => {
             </Card>
 
             {/* Inquiry Form */}
-            <Card className="bg-background/95 backdrop-blur-sm border-2 border-care-secondary shadow-2xl hover:shadow-3xl transition-all duration-300 ease-out hover:scale-[1.02]">
+            <Card className="bg-background/95 backdrop-blur-sm border border-care-secondary shadow-xl hover:shadow-2xl transition-all duration-300 ease-out hover:scale-[1.01] rounded-2xl">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl md:text-3xl text-foreground mb-2">
                   Send Us Your Inquiry
@@ -206,7 +206,7 @@ const InquiryForm = () => {
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
                         required
-                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation"
+                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation rounded-xl px-4"
                         aria-describedby="name-description"
                       />
                     </div>
@@ -218,7 +218,7 @@ const InquiryForm = () => {
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                         required
-                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation"
+                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation rounded-xl px-4"
                       />
                     </div>
                   </div>
@@ -232,14 +232,14 @@ const InquiryForm = () => {
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
                         required
-                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation"
+                        className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation rounded-xl px-4"
                         inputMode="tel"
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="relationship">Who are you to the person needing care?</Label>
                       <Select onValueChange={(value) => handleInputChange("relationship", value)}>
-                        <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
+                        <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation rounded-xl px-3">
                           <SelectValue placeholder="Select relationship" />
                         </SelectTrigger>
                         <SelectContent>
@@ -257,7 +257,7 @@ const InquiryForm = () => {
                   <div className="space-y-2">
                     <Label htmlFor="careType">What kind of support are you looking for?</Label>
                     <Select onValueChange={(value) => handleInputChange("careType", value)}>
-                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
+                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation rounded-xl px-3">
                         <SelectValue placeholder="Choose care type" />
                       </SelectTrigger>
                       <SelectContent>
@@ -270,7 +270,7 @@ const InquiryForm = () => {
                   <div className="space-y-2">
                     <Label htmlFor="timeframe">When are you hoping to start?</Label>
                     <Select onValueChange={(value) => handleInputChange("timeframe", value)}>
-                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
+                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation rounded-xl px-3">
                         <SelectValue placeholder="Select timeframe" />
                       </SelectTrigger>
                       <SelectContent>
@@ -285,7 +285,7 @@ const InquiryForm = () => {
                   <div className="space-y-2">
                     <Label htmlFor="preferredContact">How should we contact you?</Label>
                     <Select onValueChange={(value) => handleInputChange("preferredContact", value)}>
-                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation">
+                      <SelectTrigger className="h-12 border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation rounded-xl px-3">
                         <SelectValue placeholder="Email or phone" />
                       </SelectTrigger>
                       <SelectContent>
@@ -304,7 +304,7 @@ const InquiryForm = () => {
                       onChange={(e) => handleInputChange("message", e.target.value)}
                       rows={4}
                       placeholder="Please share any specific care needs, medical conditions, or questions you have..."
-                      className="min-h-[120px] border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation resize-none"
+                      className="min-h-[120px] border-2 border-care-secondary focus:border-primary transition-colors duration-300 ease-out text-base touch-manipulation resize-none rounded-xl px-4 py-3"
                     />
                   </div>
                   
@@ -312,7 +312,7 @@ const InquiryForm = () => {
                     type="submit" 
                     variant="hero" 
                     size="lg" 
-                    className="w-full min-h-[52px] text-lg font-semibold"
+                    className="w-full min-h-[52px] text-lg font-semibold rounded-xl"
                     aria-label="Submit inquiry form"
                   >
                     Send My Inquiry

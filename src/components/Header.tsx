@@ -44,14 +44,14 @@ const Header = () => {
       <div className={`bg-primary text-white transition-all duration-300 ${
         isScrolled ? 'py-1 opacity-90' : 'py-2'
       }`}>
-        <div className="container mx-auto px-4 flex justify-center items-center text-sm">
+        <div className="container mx-auto px-4 flex justify-center items-center text-xs sm:text-sm">
           <span className="font-medium">Call for Pricing & Availability: 651-210-5364</span>
         </div>
       </div>
 
       {/* Main Header */}
       <div className={`container mx-auto px-4 transition-all duration-300 ${
-        isScrolled ? 'py-2' : 'py-4'
+        isScrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-4'
       }`}>
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -61,7 +61,9 @@ const Header = () => {
                 src="/gohen-uploads/Logo-removebg-preview.png"
                 alt="Goshen Concept Care - Professional Assisted Living Facility Logo"
                 className={`object-contain transition-all duration-300 ${
-                  isScrolled ? 'w-[160px] h-[95px]' : 'w-[220px] h-[130px]'
+                  isScrolled
+                    ? 'w-[120px] h-[72px] sm:w-[160px] sm:h-[95px]'
+                    : 'w-[160px] h-[95px] sm:w-[220px] sm:h-[130px]'
                 }`}
               />
             </Link>

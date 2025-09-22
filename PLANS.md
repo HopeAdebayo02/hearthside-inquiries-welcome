@@ -74,3 +74,4 @@ This document tracks current goals, decisions, and next actions for the site.
 - Removed decorative heart badge from hero for cleaner UI.
 - Removed 24/7 Care Excellence section from Staff; merged message into Staff page intro.
 - Added Waiver Services banner on Services page (CADI, EW, BI, Private Pay) with CTA to Contact.
+ - Mobile polish: tightened header logo sizing on small screens, rounded and padded form inputs/selects/textarea, softened card borders/radii, and added safe-area helpers to prevent notch/home-indicator overlap.
